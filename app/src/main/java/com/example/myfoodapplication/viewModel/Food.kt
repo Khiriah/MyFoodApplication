@@ -4,10 +4,10 @@ import java.io.Serializable
 
 class Food(
     var id: String? = null,
-    val name: String,
+    val FoodName: String,
     var pId: String,
-    var Price:Int,
-    val State: Boolean?,
-    val description: String,
+    var FoodPrice:String,
+    val FoodState: Boolean?,
+    val Fooddescription: String,
     val ImageFood:String
 ) : Serializable

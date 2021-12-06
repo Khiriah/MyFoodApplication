@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFoodApplication">
         <activity
-            android:name=".CartActivity"
+            android:name=".ui.view.DetailsActivity"
             android:exported="false" />
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name=".ui.view.DetailsActivity"
+            android:name=".ui.view.FoodActivity"
             android:exported="false" />
         <activity
             android:name=".register.RegisterActivity"
@@ -32,9 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.view.HomeActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -4,9 +4,9 @@ import java.io.Serializable
 
 class Person (
     var idPerson: String? = null,
-    var Price:Int,
     val namePerson: String,
+    var TypePerson:String,
+    var RatingPerson:String,
     val StatePerson: Boolean?,
-    val descriptionPerson: String,
     val ImagePerson:String
 ) : Serializable
