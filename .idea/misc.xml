@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_details2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_food.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_raw_food.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_row.xml" value="0.22" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_row_food.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_row_person.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
