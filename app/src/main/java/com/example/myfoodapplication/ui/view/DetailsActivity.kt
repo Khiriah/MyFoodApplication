@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.myfoodapplication.Fragment.CartFragment
 import com.example.myfoodapplication.R
 import com.example.myfoodapplication.viewModel.Food
 import com.squareup.picasso.Picasso

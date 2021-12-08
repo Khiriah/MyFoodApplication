@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="90dp"
         app:cardBackgroundColor="#00FFFFFF"
@@ -21,8 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-          >
+            android:layout_height="wrap_content">
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -46,10 +45,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Email"
-                    android:textColor="#D69AB0"
-                    android:textColorHighlight="#D69AB0"
-                    android:textColorHint="#D69AB0"
-                    android:textColorLink="#D69AB0"
+                    android:textColor="#4C4B4B"
+                    android:textColorHighlight="#4C4B4B"
+                    android:textColorHint="#4C4B4B"
+                    android:textColorLink="#4C4B4B"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,10 +78,10 @@
                     android:layout_height="match_parent"
                     android:hint="Passoword"
                     android:inputType="textPassword"
-                    android:textColor="#D69AB0"
-                    android:textColorHighlight="#D69AB0"
-                    android:textColorHint="#D69AB0"
-                    android:textColorLink="#D69AB0"
+                    android:textColor="#4C4B4B"
+                    android:textColorHighlight="#4C4B4B"
+                    android:textColorHint="#4C4B4B"
+                    android:textColorLink="#4C4B4B"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +97,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Don't have account? Sign Up here"
                 android:textAlignment="center"
-                android:textColor="#D69AB0"
+                android:textColor="#4C4B4B"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,13 +109,13 @@
                 android:layout_width="163dp"
                 android:layout_height="58dp"
                 android:layout_marginStart="174dp"
-                android:layout_marginTop="156dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="179dp"
                 android:fontFamily="sans-serif"
 
                 android:text="Login"
                 android:textAlignment="center"
-                android:textColor="#D69AB0"
+                android:textColor="#4C4B4B"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -130,10 +129,11 @@
                 android:layout_marginStart="34dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="35dp"
+                android:background="#EADC60"
                 android:fontFamily="sans-serif"
                 android:text="Login"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#757575"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

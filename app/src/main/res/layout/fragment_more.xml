@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.MoreFragment">
+    tools:context=".Fragment.MoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewProfile"
+            android:layout_width="408dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:gravity="center_vertical"
+            android:text="     My Profile"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textViewVouchers"
+            android:layout_width="408dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:drawableStart="@drawable/ic_baseline_confirmation_number_24"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:gravity="center_vertical"
+            android:text="     My vouchers"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
+
+        <TextView
+            android:id="@+id/textViewHelp"
+            android:layout_width="408dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:drawableStart="@drawable/ic_baseline_live_help_24"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:gravity="center_vertical"
+            android:text="     Help and Support"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVouchers" />
+
+        <TextView
+            android:id="@+id/textViewSetting"
+            android:layout_width="408dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+
+            android:drawableStart="@drawable/ic_baseline_settings_24"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:gravity="center_vertical"
+            android:text="     Setting"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHelp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="67dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="172dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginEnd="172dp"
+            android:text="More"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

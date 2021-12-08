@@ -46,10 +46,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Email"
-                    android:textColor="#D69AB0"
-                    android:textColorHighlight="#D69AB0"
-                    android:textColorHint="#D69AB0"
-                    android:textColorLink="#D69AB0"
+                    android:textColor="#4C4B4B"
+                    android:textColorHighlight="#4C4B4B"
+                    android:textColorHint="#4C4B4B"
+                    android:textColorLink="#4C4B4B"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,10 +76,10 @@
                     android:layout_height="match_parent"
                     android:hint="Passoword"
                     android:inputType="textPassword"
-                    android:textColor="#D69AB0"
-                    android:textColorHighlight="#D69AB0"
-                    android:textColorHint="#D69AB0"
-                    android:textColorLink="#D69AB0"
+                    android:textColor="#4C4B4B"
+                    android:textColorHighlight="#4C4B4B"
+                    android:textColorHint="#4C4B4B"
+                    android:textColorLink="#4C4B4B"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +96,7 @@
                 android:fontFamily="sans-serif"
                 android:text="I have account? Login In here"
                 android:textAlignment="center"
-                android:textColor="#D69AB0"
+                android:textColor="#4C4B4B"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,10 +123,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Full Name"
-                    android:textColor="#D69AB0"
-                    android:textColorHighlight="#D69AB0"
-                    android:textColorHint="#D69AB0"
-                    android:textColorLink="#D69AB0"
+                    android:textColor="#4C4B4B"
+                    android:textColorHighlight="#4C4B4B"
+                    android:textColorHint="#4C4B4B"
+                    android:textColorLink="#4C4B4B"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -152,10 +152,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="phone"
-                    android:textColor="#D69AB0"
-                    android:textColorHighlight="#D69AB0"
-                    android:textColorHint="#D69AB0"
-                    android:textColorLink="#D69AB0"
+                    android:textColor="#4C4B4B"
+                    android:textColorHighlight="#4C4B4B"
+                    android:textColorHint="#4C4B4B"
+                    android:textColorLink="#4C4B4B"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -171,7 +171,7 @@
                 android:text="Sign Up"
 
                 android:textAlignment="center"
-                android:textColor="#D69AB0"
+                android:textColor="#4C4B4B"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.817"
@@ -185,10 +185,11 @@
                 android:layout_marginStart="34dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="35dp"
+                android:background="#EADC60"
                 android:fontFamily="sans-serif"
                 android:text="Sign Up"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#757575"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
