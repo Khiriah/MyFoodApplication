@@ -9,7 +9,7 @@ class API {
         private  val retrofit: Retrofit
         init {
             retrofit = Retrofit.Builder()
-                .baseUrl("https://618ebc2e50e24d0017ce141f.mockapi.io")
+                .baseUrl("https://mockapi.io/projects/619dfb4c131c60001708923a")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

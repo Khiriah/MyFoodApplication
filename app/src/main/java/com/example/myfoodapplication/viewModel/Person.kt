@@ -1,12 +1,10 @@
 package com.example.myfoodapplication.viewModel
 
-import java.io.Serializable
-
-class Person (
-    var idPerson: String? = null,
-    val namePerson: String,
-    var TypePerson:String,
-    var RatingPerson:String,
-    val StatePerson: Boolean?,
-    val ImagePerson:String
-) : Serializable
+data class Person(
+    val PersonImage: String,
+    val PersonName: String,
+    val PersonRating: String,
+    val PersonState: String,
+    val PersonType: String,
+    val pId: String
+)

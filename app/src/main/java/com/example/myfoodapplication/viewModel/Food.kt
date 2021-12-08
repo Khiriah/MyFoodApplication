@@ -2,12 +2,12 @@ package com.example.myfoodapplication.viewModel
 
 import java.io.Serializable
 
-class Food(
-    var id: String? = null,
+data class Food(
+    val FoodDescription: String,
+    val FoodImage: String,
     val FoodName: String,
-    var pId: String,
-    var FoodPrice:String,
-    val FoodState: Boolean?,
-    val Fooddescription: String,
-    val ImageFood:String
-) : Serializable
+    val FoodPrice: String,
+    val FoodState: Boolean,
+    val fId: String,
+    val pId: String
+): Serializable

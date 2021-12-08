@@ -58,7 +58,7 @@
                 android:textColorHint="#EA86A8"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textViewName"
+                app:layout_constraintStart_toEndOf="@+id/textViewDName"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewD" />
 
             <TextView
@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewDPrice" />
 
             <TextView
-                android:id="@+id/textViewName"
+                android:id="@+id/textViewDName"
                 android:layout_width="186dp"
                 android:layout_height="41dp"
                 android:layout_marginStart="8dp"
