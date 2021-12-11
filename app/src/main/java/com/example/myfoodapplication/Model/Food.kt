@@ -1,4 +1,4 @@
-package com.example.myfoodapplication.viewModel
+package com.example.myfoodapplication.Model
 
 import java.io.Serializable
 

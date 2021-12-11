@@ -1,4 +1,4 @@
-package com.example.myfoodapplication.viewModel
+package com.example.myfoodapplication.Model
 
 data class Person(
     val PersonImage: String,

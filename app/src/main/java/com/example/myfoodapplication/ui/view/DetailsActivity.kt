@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.myfoodapplication.Fragment.CartFragment
 import com.example.myfoodapplication.R
-import com.example.myfoodapplication.viewModel.Food
+import com.example.myfoodapplication.Model.Food
 import com.squareup.picasso.Picasso
 
 class DetailsActivity : AppCompatActivity() {

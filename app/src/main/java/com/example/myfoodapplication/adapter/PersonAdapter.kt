@@ -11,10 +11,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfoodapplication.R
 import com.example.myfoodapplication.ui.view.FoodActivity
-import com.example.myfoodapplication.viewModel.Person
+import com.example.myfoodapplication.Model.Person
 import com.squareup.picasso.Picasso
 
-class PersonAdapter (var data: MutableList<Person>) : RecyclerView.Adapter<PersonHoler>() {
+class PersonAdapter (var data:List<Person>) : RecyclerView.Adapter<PersonHoler>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHoler {
 
         var v = LayoutInflater.from(parent.context).inflate(R.layout.list_row_person, parent, false)
@@ -40,7 +40,7 @@ class PersonAdapter (var data: MutableList<Person>) : RecyclerView.Adapter<Perso
 }
 class PersonHoler(v: View) : RecyclerView.ViewHolder(v) {
     var pName = v.findViewById<TextView>(R.id.textViewPName)
-    var pType = v.findViewById<CheckBox>(R.id.textViewPType)
+    var pType = v.findViewById<TextView>(R.id.textViewPType)
     var pRating = v.findViewById<TextView>(R.id.textViewPRating)
     var imageViewp=v.findViewById<ImageView>(R.id.imageViewPerson)
     var constraintLayoutPerson = v.findViewById<ConstraintLayout>(R.id.constraintLayoutP)
