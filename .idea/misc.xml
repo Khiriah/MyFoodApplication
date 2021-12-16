@@ -3,24 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.2203125" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/drawable/ic_baseline_confirmation_number_24.xml" value="0.1125" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_details2.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_food.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_help.xml" value="0.1" />
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_help.xml" value="0.25" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_invoices.xml" value="0.1" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_setting.xml" value="0.25" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/fragment_cart.xml" value="0.25" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/fragment_more.xml" value="0.22" />
-        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_raw_cart.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_raw_food.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_raw_cart.xml" value="0.33" />
+        <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_raw_food.xml" value="0.33" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_row.xml" value="0.22" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_row_food.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Khairiah/AndroidStudioProjects/MyFoodApplication/app/src/main/res/layout/list_row_person.xml" value="0.20416666666666666" />

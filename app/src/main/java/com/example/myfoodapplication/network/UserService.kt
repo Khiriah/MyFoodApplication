@@ -1,12 +1,17 @@
 package com.example.myfoodapplication.network
 
-import com.google.firebase.firestore.auth.User
+
+import com.example.myfoodapplication.Model.User
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface UserService {
 
-    @GET("User")
-    fun getUserByUsernameAndPassword(@Query("username")username:String, @Query("password")password:String): Call<List<User>>
+    @GET("uesrs")
+    fun getUserByFbId(@Query("fb_id")fbId:String): Call<List<User>>
+    @POST("uesrs")
+    fun addUser(@Body user: User): Call<User>
 }

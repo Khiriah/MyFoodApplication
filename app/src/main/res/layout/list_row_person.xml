@@ -9,11 +9,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/carview"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:alpha="0.9"
         android:orientation="vertical"
         app:cardBackgroundColor="#ECECEC"
@@ -29,8 +28,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutPerson"
-            android:layout_width="353dp"
-            android:layout_height="317dp">
+            android:layout_width="378dp"
+            android:layout_height="320dp">
 
             <TextView
                 android:id="@+id/textViewPName"
@@ -51,9 +50,9 @@
                 android:id="@+id/imageViewPerson"
                 android:layout_width="0dp"
                 android:layout_height="206dp"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.461"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

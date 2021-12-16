@@ -12,39 +12,40 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewP"
-            android:layout_width="413dp"
-            android:layout_height="601dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/searchViewP"
+          />
 
         <SearchView
             android:id="@+id/searchViewP"
             android:layout_width="380dp"
             android:layout_height="57dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerViewP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLoction" />
 
         <TextView
             android:id="@+id/textViewLoction"
             android:layout_width="158dp"
             android:layout_height="37dp"
             android:layout_marginStart="126dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="127dp"
-            android:layout_marginBottom="20dp"
             android:gravity="center|center_horizontal"
             android:text="Loction"
-            app:layout_constraintBottom_toTopOf="@+id/searchViewP"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

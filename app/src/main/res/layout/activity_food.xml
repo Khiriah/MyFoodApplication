@@ -32,11 +32,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fRecyclerView"
-        android:layout_width="412dp"
-        android:layout_height="468dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView2"
+        app:spanCount="2"
+        tools:listitem="@layout/list_raw_food" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -53,15 +57,18 @@
         android:layout_width="362dp"
         android:layout_height="66dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/fRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="123dp"
-        android:layout_height="34dp"
+        android:layout_width="141dp"
+        android:layout_height="29dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"

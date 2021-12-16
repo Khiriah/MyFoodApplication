@@ -3,8 +3,11 @@ package com.example.myfoodapplication.Model
 import java.io.Serializable
 
 data class User(
-    val Email: String,
-    val Name: String,
-    val Phone: Int,
-    val uId: String
+    val date_of_birth: String,
+    val email: String,
+    val fb_id: String,
+    val gender: String,
+    val id: String,
+    val name: String,
+    val phone: String
 ): Serializable

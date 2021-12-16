@@ -10,33 +10,33 @@
         android:id="@+id/view4"
         android:layout_width="377dp"
         android:layout_height="1dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:background="#EADC60"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/cartImageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textViewCName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="9dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="194dp"
+        android:layout_marginBottom="46dp"
         android:shadowColor="#101010"
         android:text="Name"
         android:textColor="#101010"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textViewCPrice"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cImageView"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintStart_toEndOf="@+id/cartImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -51,17 +51,44 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/view4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/cImageView"
+        android:id="@+id/cImageViewRemove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="11dp"
         app:layout_constraintBottom_toTopOf="@+id/view4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181"
         app:srcCompat="@drawable/ic_baseline_clear_24" />
+
+    <ImageView
+        android:id="@+id/cartImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintStart_toEndOf="@+id/cImageViewRemove"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Spinner
+        android:id="@+id/spinnerCart"
+        android:layout_width="132dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cartImageView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCPrice"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

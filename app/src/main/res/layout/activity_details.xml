@@ -80,8 +80,8 @@
 
             <TextView
                 android:id="@+id/textViewDName"
-                android:layout_width="186dp"
-                android:layout_height="41dp"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
 

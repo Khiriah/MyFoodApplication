@@ -4,17 +4,17 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myfoodapplication.Model.Supplier
 import com.example.myfoodapplication.R
 import com.example.myfoodapplication.ui.view.FoodActivity
-import com.example.myfoodapplication.Model.Person
 import com.squareup.picasso.Picasso
 
-class PersonAdapter (var data:List<Person>) : RecyclerView.Adapter<PersonHoler>() {
+
+class SupplierAdapter (var data:List<Supplier>) : RecyclerView.Adapter<PersonHoler>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHoler {
 
         var v = LayoutInflater.from(parent.context).inflate(R.layout.list_row_person, parent, false)
@@ -23,13 +23,12 @@ class PersonAdapter (var data:List<Person>) : RecyclerView.Adapter<PersonHoler>(
 
     override fun onBindViewHolder(holder: PersonHoler, position: Int) {
         var constraint = holder.constraintLayoutPerson.context
-        holder.pName.text = data[position].PersonName
-        holder.pRating.text = data[position].PersonRating
-        holder.pType.text=data[position].PersonType
-        Picasso.get().load(data[position].PersonImage).into(holder.imageViewp)
+        holder.pName.text = data[position].name
+        holder.pRating.text = data[position].rating
+        holder.pType.text=data[position].food_types
+        Picasso.get().load(data[position].logo).into(holder.imageViewp)
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView.context, FoodActivity::class.java)
-         //   intent.putExtra("Persons", data[position])
             constraint.startActivity(intent)
         }
     }

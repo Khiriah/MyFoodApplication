@@ -10,9 +10,11 @@ import com.example.myfoodapplication.Repository.FoodRepository
 class FoodViewModel : ViewModel() {
 
 
-    var foodRepository= FoodRepository()
+    var foodRepo= FoodRepository()
 
     fun getFoods(): LiveData<List<Food>> {
-        return foodRepository.getallFoods()
+        return foodRepo.getMenueById("1")
+
     }
+
 }

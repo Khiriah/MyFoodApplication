@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.R
 import com.example.myfoodapplication.ViewModel.FoodViewModel
 import com.example.myfoodapplication.adapter.FoodAdapter
