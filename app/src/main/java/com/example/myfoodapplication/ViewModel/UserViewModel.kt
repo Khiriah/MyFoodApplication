@@ -3,11 +3,12 @@ package com.example.myfoodapplication.ViewModel
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myfoodapplication.Model.User
 import com.example.myfoodapplication.Repository.UserRepository
 import com.google.firebase.auth.FirebaseUser
 
 class UserViewModel : ViewModel() {
-    var registrationlivedata = MutableLiveData<Boolean>()
+    lateinit var registrationlivedata : MutableLiveData<User>
     fun register(
         email: String,
         password:String,
@@ -15,11 +16,12 @@ class UserViewModel : ViewModel() {
         date_of_birth: String,
         gender:String,
         name:String
-    ) {
+    ):MutableLiveData<Boolean> {
         var urregister = UserRepository()
-        registrationlivedata = urregister.register(email,password,phone, date_of_birth,gender,name)
+        var registration = urregister.register(email, password, phone, date_of_birth, gender, name)
 
-
+        return registration
+    }
 
         fun addUserApi(
             email: String,
@@ -30,17 +32,12 @@ class UserViewModel : ViewModel() {
             name: String,
             id: String
 
-        ): MutableLiveData<Boolean> {
-            urregister.addUserToApi(email, fb_id, phone, date_of_birth, gender, name, id)
-                .observeForever {
-                    if (it != null) {
-                        registrationlivedata.postValue(true)
-                    } else
-                        registrationlivedata.postValue(false)
-                }
-            return registrationlivedata
+        ){
+            var uAddApi=UserRepository()
+            registrationlivedata=uAddApi.addUserToApi(email,fb_id,phone,date_of_birth,gender,name,id)
+
         }
-    }
+
 
     var loginLiveData = MutableLiveData<FirebaseUser>()
     fun login(email: String, password: String) {

@@ -3,6 +3,7 @@ package com.example.myfoodapplication.ui.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,7 @@ class FoodActivity : AppCompatActivity() {
 
         val viewModel: FoodViewModel by viewModels()
         var fRecyclerView=findViewById<RecyclerView>(R.id.fRecyclerView)
-        fRecyclerView.layoutManager= LinearLayoutManager(this)
+        fRecyclerView.layoutManager= GridLayoutManager(this,2)
 
 
         viewModel.getFoods().observe(this,{list->

@@ -8,12 +8,10 @@ import retrofit2.http.*
 
 interface OrderService {
 
-//    @GET("Product/{id}")
-//    fun getCartById(@Path("id") id:String): Call<Product>
 
-//
+
     @POST("uesrs/{id}/order")
-    fun addItemToOrder(@Body order: Order): Call<Order>
+    fun addItemToOrder(@Path ("id")userId:String,@Body order: Order): Call<Order>
 
 
 //    @DELETE("order/{id}")

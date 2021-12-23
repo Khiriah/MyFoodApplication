@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
 //        var textViewLoction = v.findViewById<TextView>(R.id.textViewLoction)
         val viewModel: SupplierViewModel by viewModels()
         pRecyclerView.layoutManager = LinearLayoutManager(context)
-        viewModel.getPosts().observe(this, { list ->
+        viewModel.getSupplier().observe(this, { list ->
             pRecyclerView.adapter = SupplierAdapter(list)
 
         })

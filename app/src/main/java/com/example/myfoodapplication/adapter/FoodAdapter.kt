@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -25,11 +26,9 @@ class FoodAdapter (var data: List<Food>) : RecyclerView.Adapter<FoodHoler>() {
         var Layout = holder.LayoutFood.context
         holder.fName.text = data[position].name
         holder.fPrice.text = data[position].price
-  //      holder.fCheckBox!!.isChecked == data[position].FoodState
-//        holder.fCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
-//
-//
-//        }
+
+
+
         Picasso.get().load(data[position].photo).into(holder.imageView)
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView.context, DetailsActivity::class.java)
@@ -45,7 +44,8 @@ class FoodAdapter (var data: List<Food>) : RecyclerView.Adapter<FoodHoler>() {
 class FoodHoler(v: View) : RecyclerView.ViewHolder(v) {
     var fName = v.findViewById<TextView>(R.id.textViewFName)
     var fPrice = v.findViewById<TextView>(R.id.textViewFPrice)
-    var imageView=v.findViewById<ImageView>(R.id.imageViewFood2)
-//    var fCheckBox=v.findViewById<CheckBox>(R.id.fCheckBox)
+     var imageView=v.findViewById<ImageView>(R.id.imageViewFood2)
+ var OrderButton=v.findViewById<Button>(R.id.OrderButton)
     var LayoutFood = v.findViewById<LinearLayout>(R.id.LayoutFood)
+
 }

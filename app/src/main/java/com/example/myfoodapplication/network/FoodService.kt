@@ -12,7 +12,6 @@ import retrofit2.http.Path
 interface FoodService  {
     @GET("suppliers/{id}/products")
     fun getMenueById(@Path("id") id:String): Call<List<Food>>
-    @POST("uesrs/{id}/order/{id}/Product")
-    fun addItemToProduct(@Body product: Product): Call<Product>
+
 
 }

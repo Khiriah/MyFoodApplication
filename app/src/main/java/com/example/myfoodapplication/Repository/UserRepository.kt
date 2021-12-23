@@ -13,7 +13,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserRepository {  private lateinit var auth: FirebaseAuth
+class UserRepository {
+    private lateinit var auth: FirebaseAuth
     fun login(email: String, password: String): MutableLiveData<FirebaseUser> {
         auth = Firebase.auth
         var mutableLiveData = MutableLiveData<FirebaseUser>()
@@ -33,8 +34,8 @@ class UserRepository {  private lateinit var auth: FirebaseAuth
         password: String,
         phone: String,
         date_of_birth: String,
-        gender:String,
-        name:String
+        gender: String,
+        name: String
 
     ): MutableLiveData<Boolean> {
         var mutableLiveData = MutableLiveData<Boolean>()
@@ -71,34 +72,34 @@ class UserRepository {  private lateinit var auth: FirebaseAuth
     }
 
 
-   fun addUserToApi(
-       email: String,
-       fb_id:String,
-       phone: String,
-       date_of_birth: String,
-       gender:String,
-       name :String,
-       id:String
+    fun addUserToApi(
+        email: String,
+        fb_id: String,
+        phone: String,
+        date_of_birth: String,
+        gender: String,
+        name: String,
+        id: String
 
-       ):MutableLiveData<User>{
-       var mutableLiveData=MutableLiveData<User>()
-       val userServies= API.getInstance().create(UserService::class.java)
-       val callUser=userServies.addUser(
-           User(date_of_birth,email,fb_id,gender,id,name,phone)
-       )
-       callUser.enqueue(object : Callback<User> {
-           override fun onResponse(call: Call<User>, response: Response<User>) {
-               mutableLiveData.postValue(response.body())
-           }
+    ): MutableLiveData<User> {
+        var mutableLiveData = MutableLiveData<User>()
+        val userServies = API.getInstance().create(UserService::class.java)
+        val callUser = userServies.addUser(
+            User(date_of_birth, email, fb_id, gender, id, name, phone)
+        )
+        callUser.enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                mutableLiveData.postValue(response.body())
+            }
 
-           override fun onFailure(call: Call<User>, t: Throwable) {
-            println("Error")
-           }
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                println("Error")
+            }
 
-       })
-return mutableLiveData
+        })
+        return mutableLiveData
 
-   }
+    }
 
 
 }

@@ -9,7 +9,6 @@ class ShardPrefHelper {
             pref.edit()
                 .putString("id", uid).commit()
         }
-
         fun getUserId(context: Context): String {
             var pref = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
           var id=  pref.getString("id","null")

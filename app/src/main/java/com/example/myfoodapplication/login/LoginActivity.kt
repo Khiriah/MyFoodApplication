@@ -37,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
 
 
         register.setOnClickListener {
-
             var intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

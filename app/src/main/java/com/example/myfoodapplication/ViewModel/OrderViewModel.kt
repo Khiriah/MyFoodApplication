@@ -7,9 +7,16 @@ import androidx.lifecycle.ViewModel
 import com.example.myfoodapplication.Repository.OrderRepository
 
 class OrderViewModel  : ViewModel() {
+    var orderRepo = OrderRepository()
 
-//
-    var cartRepo = OrderRepository()
+
+
+
+
+
+
+
+
 ////    fun getallCart(): LiveData<Food> {
 ////        return cartRepo.getallCart()
 ////    }
@@ -23,23 +30,23 @@ class OrderViewModel  : ViewModel() {
 //        return mutableLiveData
 //    }
 //
-//    fun addItemToOrder(
-//    id: String,
-//    uesrId: String,
-//    total_price: Int,
-//    order_date: String
-//): LiveData<Boolean> {
-//        var mutableLiveData = MutableLiveData<Boolean>()
-//        OrderRepository().addItemToOrder(id,uesrId,total_price,order_date)
-//            .observeForever {
-//                if (it.id.isNotEmpty() && it.uesrId.isNotEmpty()) {
-//                    mutableLiveData.postValue(true)
-//                } else {
-//                    mutableLiveData.postValue(false)
-//                }
-//            }
-//        return mutableLiveData
-//    }
+    fun addItemToOrder(
+    id: String,
+    uesrId: String,
+    total_price: Int,
+    order_date: String
+): LiveData<Boolean> {
+        var mutableLiveData = MutableLiveData<Boolean>()
+    orderRepo.addItemToOrder(id,uesrId,total_price,order_date)
+            .observeForever {
+              if (it.id.isNotEmpty()) {
+                    mutableLiveData.postValue(true)
+               } else {
+                    mutableLiveData.postValue(false)
+                }
+            }
+        return mutableLiveData
+    }
 
 //    fun removeItemFromCart(): LiveData<Cart> {
 //        var mutableLiveData = MutableLiveData<Cart>()
