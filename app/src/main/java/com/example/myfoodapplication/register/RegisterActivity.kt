@@ -8,15 +8,13 @@ import android.widget.*
 import androidx.activity.viewModels
 import com.example.myfoodapplication.Model.User
 import com.example.myfoodapplication.R
-import com.example.myfoodapplication.Util.ShardPrefHelper
+import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.ViewModel.UserViewModel
 import com.example.myfoodapplication.login.LoginActivity
 import com.example.myfoodapplication.ui.view.HomeActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
 
@@ -81,8 +79,8 @@ class RegisterActivity : AppCompatActivity() {
                     )
                     viewModelregister.registrationlivedata.observe(this, {
 
-                        ShardPrefHelper.saveUserId(this, it.id)
-                        ShardPrefHelper.getUserId(this)
+                        SharedPrefHelper.saveUserId(this, it.id)
+                        SharedPrefHelper.getUserId(this)
                         startActivity(Intent(this, HomeActivity::class.java))
                     })
 

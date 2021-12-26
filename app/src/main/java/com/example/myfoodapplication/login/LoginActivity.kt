@@ -25,11 +25,11 @@ class LoginActivity : AppCompatActivity() {
         var bLogin = findViewById<Button>(R.id.buttonLogin)
         var register = findViewById<TextView>(R.id.textViewLogin)
 
-
+var auth=Firebase.auth
         val viewModelLogin: UserViewModel by viewModels()
         bLogin.setOnClickListener {
-            viewModelLogin.login(email.text.toString(), password.text.toString())
-            viewModelLogin.loginLiveData.observe(this, {
+            viewModelLogin.login(this ,email.text.toString(), password.text.toString())
+            .observe(this, {
                 startActivity(Intent(this, HomeActivity::class.java))
             })
         }

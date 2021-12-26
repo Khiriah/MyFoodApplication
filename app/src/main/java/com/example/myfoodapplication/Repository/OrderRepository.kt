@@ -4,8 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.Model.Order
-import com.example.myfoodapplication.Model.User
-import com.example.myfoodapplication.Util.ShardPrefHelper
+import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.network.API
 import com.example.myfoodapplication.network.OrderService
 import com.example.myfoodapplication.network.UserService
@@ -18,11 +17,11 @@ import retrofit2.Response
 
 class OrderRepository {
 
-    var mutableLiveData = MutableLiveData<Food>()
+
     val OrderService = API.getInstance().create(OrderService::class.java)
-    val userService = API.getInstance().create(UserService::class.java)
+
     var mutableTotalPrice = MutableLiveData<Double>()
-    var auth = Firebase.auth
+
     //   getallCart
 
 //    fun getCartById(id:String): MutableLiveData<Food> {
@@ -56,42 +55,22 @@ class OrderRepository {
 
     var context: Context? = null
 
-    fun getUserByFbId(fbId:String): MutableLiveData<List<User>> {
-
-        var mutableLiveData= MutableLiveData<List<User>>()
 
 
-      val user =userService.getUserByFbId(auth.currentUser?.uid.toString())
-        user.enqueue(object : Callback<List<User>> {
-            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
-                mutableLiveData.postValue(response.body())
-            }
-
-            override fun onFailure(call: Call<List<User>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-
-        })
+//    val user =userService.getUserByFbId(auth.currentUser?.uid.toString())
 
 
-        return mutableLiveData
-    }
-
-
-    //val user =userService.getUserByFbId(auth.currentUser?.uid.toString())
-
-
-    fun addItemToOrder(
+    fun creatOrder(
         id: String,
         uesrId: String,
         total_price: Int,
         order_date: String
     ): MutableLiveData<Order> {
         var mutableLiveData = MutableLiveData<Order>()
-        //var userId = context?.let { ShardPrefHelper.getUserId(it.applicationContext) }
+//       var userId = context?.let { SharedPrefHelper.getUserId(it.applicationContext) }
 
         val callCartList =
-            OrderService.addItemToOrder("1", Order(id, order_date, total_price, uesrId))
+            OrderService.creatOrder(uesrId, Order(id, order_date, total_price, uesrId))
         callCartList.enqueue(object : Callback<Order> {
             override fun onResponse(call: Call<Order>, response: Response<Order>) {
                 mutableLiveData.postValue(response.body())

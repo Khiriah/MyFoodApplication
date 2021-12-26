@@ -3,6 +3,7 @@ package com.example.myfoodapplication.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myfoodapplication.Model.Order
 
 import com.example.myfoodapplication.Repository.OrderRepository
 
@@ -30,23 +31,26 @@ class OrderViewModel  : ViewModel() {
 //        return mutableLiveData
 //    }
 //
-    fun addItemToOrder(
+    fun creatOrder(
     id: String,
     uesrId: String,
     total_price: Int,
     order_date: String
-): LiveData<Boolean> {
-        var mutableLiveData = MutableLiveData<Boolean>()
-    orderRepo.addItemToOrder(id,uesrId,total_price,order_date)
+): LiveData<Order> {
+        var mutableLiveData = MutableLiveData<Order>()
+    orderRepo.creatOrder(id,uesrId,total_price,order_date)
             .observeForever {
               if (it.id.isNotEmpty()) {
-                    mutableLiveData.postValue(true)
+                    mutableLiveData.postValue(it)
                } else {
-                    mutableLiveData.postValue(false)
+                    mutableLiveData.postValue(it)
                 }
             }
         return mutableLiveData
     }
+
+
+
 
 //    fun removeItemFromCart(): LiveData<Cart> {
 //        var mutableLiveData = MutableLiveData<Cart>()

@@ -22,7 +22,7 @@ class ProductAdapter (var data: List<Product>) : RecyclerView.Adapter<CartHolder
     }
 
     override fun onBindViewHolder(holder: CartHolder, position: Int) {
-        var spinner = holder.spinner.context
+       // var spinner = holder.spinner.context
         holder.oName.text = data[position].name
         holder.oPrice.text = data[position].price
         Picasso.get().load(data[position].photo).into(holder.orderImageView)

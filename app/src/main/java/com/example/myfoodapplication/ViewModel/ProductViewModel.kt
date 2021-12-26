@@ -1,4 +1,46 @@
 package com.example.myfoodapplication.ViewModel
 
-class ProductViewModel {
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.example.myfoodapplication.Model.Product
+import com.example.myfoodapplication.Repository.OrderRepository
+import com.example.myfoodapplication.Repository.ProductRepository
+
+class ProductViewModel : ViewModel() {
+    var productRepo = ProductRepository()
+
+    fun addItemToProduct(
+        category: String,
+        createdAt: String,
+        description: String,
+        id: String,
+        name: String,
+        orderId: String,
+        photo: String,
+        price: String,
+        quantity: Int
+    ): LiveData<Boolean> {
+        var mutableLiveData = MutableLiveData<Boolean>()
+        productRepo.addItemToProduct(category,createdAt,description,id,name,orderId,photo,price,quantity)
+            .observeForever {
+//                if (it.id.isNotEmpty()) {
+//                    mutableLiveData.postValue(true)
+//                } else {
+//                    mutableLiveData.postValue(false)
+//                }
+            }
+        return mutableLiveData
+    }
+    fun getProductById(
+        userid: String,
+        orderId: String
+    ): MutableLiveData<List<Product>> {
+        var mutableLiveData = MutableLiveData<List<Product>>()
+        productRepo.getProductById(userid,orderId)
+            .observeForever {
+
+            }
+        return mutableLiveData
+    }
 }

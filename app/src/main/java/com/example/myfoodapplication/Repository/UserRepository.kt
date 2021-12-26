@@ -1,6 +1,7 @@
 package com.example.myfoodapplication.Repository
 
 import androidx.lifecycle.MutableLiveData
+import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.Model.User
 import com.example.myfoodapplication.network.API
 import com.example.myfoodapplication.network.UserService
@@ -100,6 +101,73 @@ class UserRepository {
         return mutableLiveData
 
     }
+    fun getUserByFbId(id:String): MutableLiveData<List<User>> {
+        val userService = API.getInstance().create(UserService::class.java)
+        var mutableLiveData= MutableLiveData<List<User>>()
+//        auth.currentUser?.uid.toString()
+
+        val user =userService.getUserByFbId(id)
+        user.enqueue(object : Callback<List<User>> {
+            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+                mutableLiveData.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<List<User>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
+        return mutableLiveData
+    }
+
+
+
+    val user= API.getInstance().create(UserService::class.java)
+
+    fun getUserById(id:String): MutableLiveData<User> {
+
+        var mutableLiveData= MutableLiveData<User>()
+
+
+        val callFoodList=user.getUserById(id)
+        callFoodList.enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                mutableLiveData.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
+        return mutableLiveData
+    }
+
+//    fun getUserById(id:String): MutableLiveData<List<User>> {
+//        val userService = API.getInstance().create(UserService::class.java)
+//        var mutableLiveData= MutableLiveData<List<User>>()
+////        auth.currentUser?.uid.toString()
+//
+//        val user =userService.getUserById(id)
+//        user.enqueue(object : Callback<List<User>> {
+//            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+//                mutableLiveData.postValue(response.body())
+//            }
+//
+//            override fun onFailure(call: Call<List<User>>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        })
+//
+//
+//        return mutableLiveData
+//    }
+
 
 
 }

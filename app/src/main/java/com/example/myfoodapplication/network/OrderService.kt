@@ -11,7 +11,7 @@ interface OrderService {
 
 
     @POST("uesrs/{id}/order")
-    fun addItemToOrder(@Path ("id")userId:String,@Body order: Order): Call<Order>
+    fun creatOrder(@Path ("id")userId:String,@Body order: Order): Call<Order>
 
 
 //    @DELETE("order/{id}")

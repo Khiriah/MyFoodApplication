@@ -3,10 +3,7 @@ package com.example.myfoodapplication.network
 
 import com.example.myfoodapplication.Model.User
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface UserService {
 
@@ -14,4 +11,7 @@ interface UserService {
     fun getUserByFbId(@Query("fb_id")fbId:String): Call<List<User>>
     @POST("uesrs")
     fun addUser(@Body user: User): Call<User>
+
+    @GET("uesrs/{id}")
+    fun getUserById(@Path("id")id:String): Call<User>
 }
