@@ -30,8 +30,6 @@ class RegisterActivity : AppCompatActivity() {
         var loginin = findViewById<TextView>(R.id.textViewLogin)
         var bRegister = findViewById<Button>(R.id.buttonRegister)
         var date_of_birth = findViewById<TextInputEditText>(R.id.editTextdate_of_birthtext)
-        var genderMale = findViewById<RadioButton>(R.id.radioButtonGenderMale)
-        var genderFemale = findViewById<RadioButton>(R.id.radioButtonGenderFemale)
         var gender1=findViewById<RadioGroup>(R.id.radioGroup)
         var gender:String = ""
 //     var image= findViewById<ImageView>(R.id.textViewLogin)

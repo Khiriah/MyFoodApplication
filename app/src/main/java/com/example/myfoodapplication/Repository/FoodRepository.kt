@@ -6,34 +6,56 @@ import com.example.myfoodapplication.Model.Order
 import com.example.myfoodapplication.Model.Product
 import com.example.myfoodapplication.network.API
 import com.example.myfoodapplication.network.FoodService
+import com.example.myfoodapplication.network.ProductService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class FoodRepository {
+    val FoodService = API.getInstance().create(FoodService::class.java)
 
-    val FoodService= API.getInstance().create(FoodService::class.java)
+    fun getMenueById(
+        supplierId: String
+    ): MutableLiveData<List<Food>> {
+        var mutableLiveData = MutableLiveData<List<Food>>()
+//       var userId = context?.let { SharedPrefHelper.getUserId(it.applicationContext) }
 
-    fun getMenueById(id:String): MutableLiveData<List<Food>> {
-
-        var mutableLiveData= MutableLiveData<List<Food>>()
-
-
-        val callFoodList=FoodService.getMenueById(id)
-        callFoodList.enqueue(object : Callback<List<Food>> {
+        val callCartList =
+            FoodService.getMenueById(supplierId)
+        callCartList.enqueue(object : Callback<List<Food>> {
             override fun onResponse(call: Call<List<Food>>, response: Response<List<Food>>) {
                 mutableLiveData.postValue(response.body())
             }
 
             override fun onFailure(call: Call<List<Food>>, t: Throwable) {
-                TODO("Not yet implemented")
+
+                println("Error")
             }
-
         })
-
-
         return mutableLiveData
     }
+//    val FoodService= API.getInstance().create(FoodService::class.java)
+//
+//    fun getMenueById(id:String): MutableLiveData<List<Food>> {
+//
+//        var mutableLiveData= MutableLiveData<List<Food>>()
+//
+//
+//        val callFoodList=FoodService.getMenueById(id)
+//        callFoodList.enqueue(object : Callback<List<Food>> {
+//            override fun onResponse(call: Call<List<Food>>, response: Response<List<Food>>) {
+//                mutableLiveData.postValue(response.body())
+//            }
+//
+//            override fun onFailure(call: Call<List<Food>>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        })
+//
+//
+//        return mutableLiveData
+//    }
 
 //    fun addItemToProduct(
 //        id: String,

@@ -7,4 +7,6 @@ import retrofit2.http.GET
 interface SupplierService {
     @GET("suppliers")
     fun  getallPersons(): Call<List<Supplier>>
+//    @GET("suppliers/{id}")
+//    fun get
 }

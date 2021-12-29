@@ -8,8 +8,8 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ProductService {
-    @POST("uesrs/{id}/order/{id}/Product")
-    fun addItemToProduct(@Path("id")orderId:String, @Body product: Product): Call<Product>
-    @GET("uesrs/{id}/order/{id}/Product")
-    fun  getProductById(@Path("id")userId:String,@Path("id")orderId:String ): Call<List<Product>>
+    @POST("uesrs/{id}/order/{oid}/Product")
+    fun addItemToProduct(@Path("id")userId:String,@Path("oid")orderId:String, @Body product: Product): Call<Product>
+    @GET("uesrs/{id}/order/{oid}/Product")
+    fun  getProductById(@Path("id")userId:String,@Path("oid")orderId:String ): Call<List<Product>>
 }

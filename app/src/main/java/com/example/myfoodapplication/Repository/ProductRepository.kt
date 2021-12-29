@@ -1,8 +1,10 @@
 package com.example.myfoodapplication.Repository
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.example.myfoodapplication.Model.Order
 import com.example.myfoodapplication.Model.Product
+import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.network.API
 import com.example.myfoodapplication.network.ProductService
 import retrofit2.Call
@@ -52,8 +54,13 @@ class ProductRepository {
         var mutableLiveData = MutableLiveData<Product>()
 //       var userId = context?.let { SharedPrefHelper.getUserId(it.applicationContext) }
 
+
+        fun getall(context: Context){
+        var  userId=   SharedPrefHelper.getUserId(context )
+
+
         val callCartList =
-            productService.addItemToProduct(orderId, Product(category,createdAt,description,id,name,orderId,photo,price,quantity))
+            productService.addItemToProduct(userId ,orderId, Product(category,createdAt,description,id,name,orderId,photo,price,quantity))
         callCartList.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                 mutableLiveData.postValue(response.body())
@@ -62,8 +69,9 @@ class ProductRepository {
             override fun onFailure(call: Call<Product>, t: Throwable) {
                 println("Error")
             }
-        })
+        })}
         return mutableLiveData
     }
+
 }
 

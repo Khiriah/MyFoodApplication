@@ -40,7 +40,23 @@ class UserViewModel : ViewModel() {
         registrationlivedata =
             uAddApi.addUserToApi(email, fb_id, phone, date_of_birth, gender, name, id)
 
+    } var uAddApi = UserRepository()
+    fun updateUser(
+        email: String,
+        fb_id: String,
+        phone: String,
+        date_of_birth: String,
+        gender: String,
+        name: String,
+        id: String
+
+    ):LiveData<User> {
+        return uAddApi.updateUser(email, fb_id, phone, date_of_birth, gender, name, id)
+
+
     }
+
+
 
 
     //    var loginLiveData = MutableLiveData<FirebaseUser>()

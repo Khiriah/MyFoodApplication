@@ -24,17 +24,14 @@ class CartFragment : Fragment() {
     ): View? {
         val context = inflater.context
         var v = inflater.inflate(R.layout.fragment_cart, container, false)
-
-        var cRecyclerView = v.findViewById<RecyclerView>(R.id.cartRecyclerView)
+        var cartRecyclerView = v.findViewById<RecyclerView>(R.id.cartRecyclerView)
         val viewModel: ProductViewModel by viewModels()
         var userid=SharedPrefHelper.getUserId(context)
         var orderId=SharedPrefHelper.getOrderId(context)
        viewModel.getProductById(userid, orderId).observe(this, { list ->
-           cRecyclerView.adapter = ProductAdapter(list)
+           cartRecyclerView.adapter = ProductAdapter(list)
        })
         return v
-
-
     }
 }
 

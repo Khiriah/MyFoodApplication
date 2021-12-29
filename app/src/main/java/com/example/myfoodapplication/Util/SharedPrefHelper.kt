@@ -15,14 +15,14 @@ class SharedPrefHelper {
             return id!!
         }
 
-        fun saveOrderId(context: Context, uid: String): Unit {
+        fun saveOrderId(context: Context, OrderId: String): Unit {
             var pref = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
             pref.edit()
-                .putString("id", uid).commit()
+                .putString("o_id", OrderId).commit()
         }
         fun getOrderId(context: Context): String {
             var pref = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-            var id=  pref.getString("id","null")
+            var id=  pref.getString("o_id","null")
             return id!!
         }
     }

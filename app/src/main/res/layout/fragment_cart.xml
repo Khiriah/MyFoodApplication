@@ -34,6 +34,13 @@
             android:text="Total:  26 SR"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
+        <TextView
+            android:id="@+id/textViewOCreatedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:visibility="invisible"/>
+
         <Button
             android:id="@+id/OrderButton"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"

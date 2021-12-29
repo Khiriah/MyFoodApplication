@@ -20,12 +20,12 @@ class ProductViewModel : ViewModel() {
         photo: String,
         price: String,
         quantity: Int
-    ): LiveData<Boolean> {
-        var mutableLiveData = MutableLiveData<Boolean>()
+    ): MutableLiveData<Product> {
+        var mutableLiveData = MutableLiveData<Product>()
         productRepo.addItemToProduct(category,createdAt,description,id,name,orderId,photo,price,quantity)
             .observeForever {
 //                if (it.id.isNotEmpty()) {
-//                    mutableLiveData.postValue(true)
+                  mutableLiveData.postValue(it)
 //                } else {
 //                    mutableLiveData.postValue(false)
 //                }
@@ -39,7 +39,7 @@ class ProductViewModel : ViewModel() {
         var mutableLiveData = MutableLiveData<List<Product>>()
         productRepo.getProductById(userid,orderId)
             .observeForever {
-
+                mutableLiveData.postValue(it)
             }
         return mutableLiveData
     }

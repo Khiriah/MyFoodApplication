@@ -22,14 +22,15 @@ class SupplierAdapter (var data:List<Supplier>) : RecyclerView.Adapter<PersonHol
     }
 
     override fun onBindViewHolder(holder: PersonHoler, position: Int) {
-        var constraint = holder.constraintLayoutPerson.context
+        var context = holder.constraintLayoutPerson.context
         holder.pName.text = data[position].name
         holder.pRating.text = data[position].rating
         holder.pType.text=data[position].food_types
         Picasso.get().load(data[position].logo).into(holder.imageViewp)
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView.context, FoodActivity::class.java)
-            constraint.startActivity(intent)
+            intent.putExtra("supplier",data[position])
+            context.startActivity(intent)
         }
     }
 

@@ -51,14 +51,13 @@ class ProductAdapter (var data: List<Product>) : RecyclerView.Adapter<CartHolder
 //        }
 
 
-//holder.imageViewRemove.setOnClickListener {
+holder.imageViewRemove.setOnClickListener {
 //    fun deleteItem(cart: Cart?) {
 //        CartViewModel.removeItemFromCart(Cart)
-//    }
+  }
 
     }
-//    var auth = Firebase.auth
-//    var uId = auth.currentUser?.uid
+
 
     override fun getItemCount(): Int {
         return data.size

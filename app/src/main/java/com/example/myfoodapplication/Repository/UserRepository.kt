@@ -147,6 +147,33 @@ class UserRepository {
         return mutableLiveData
     }
 
+    fun updateUser( email: String,
+                    fb_id: String,
+                    phone: String,
+                    date_of_birth: String,
+                    gender: String,
+                    name: String,
+                    id: String): MutableLiveData<User> {
+
+        var mutableLiveData= MutableLiveData<User>()
+
+
+        val callFoodList=user.updateUser(id,User(date_of_birth, email, fb_id, gender, id, name, phone))
+        callFoodList.enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                mutableLiveData.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
+        return mutableLiveData
+    }
+
 //    fun getUserById(id:String): MutableLiveData<List<User>> {
 //        val userService = API.getInstance().create(UserService::class.java)
 //        var mutableLiveData= MutableLiveData<List<User>>()
