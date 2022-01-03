@@ -113,7 +113,7 @@ class UserRepository {
             }
 
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })
@@ -138,7 +138,7 @@ class UserRepository {
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })
@@ -165,7 +165,7 @@ class UserRepository {
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })
@@ -186,7 +186,7 @@ class UserRepository {
 //            }
 //
 //            override fun onFailure(call: Call<List<User>>, t: Throwable) {
-//                TODO("Not yet implemented")
+//
 //            }
 //
 //        })

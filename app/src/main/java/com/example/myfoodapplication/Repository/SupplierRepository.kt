@@ -10,19 +10,19 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SupplierRepository {
-    fun getallSupplier(): MutableLiveData<List<Supplier>> {
+    fun getallSuppliers(): MutableLiveData<List<Supplier>> {
 
         var mutableLiveData= MutableLiveData<List<Supplier>>()
 
         val SupplierService= API.getInstance().create(SupplierService::class.java)
-        val callSupplierList=SupplierService.getallPersons()
+        val callSupplierList=SupplierService.getallSuppliers()
         callSupplierList.enqueue(object : Callback<List<Supplier>> {
             override fun onResponse(call: Call<List<Supplier>>, response: Response<List<Supplier>>) {
                 mutableLiveData.postValue(response.body())
             }
 
             override fun onFailure(call: Call<List<Supplier>>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })

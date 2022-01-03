@@ -14,7 +14,7 @@ import com.example.myfoodapplication.ui.view.FoodActivity
 import com.squareup.picasso.Picasso
 
 
-class SupplierAdapter (var data:List<Supplier>) : RecyclerView.Adapter<PersonHoler>() {
+class SupplierAdapter(var data: List<Supplier>) : RecyclerView.Adapter<PersonHoler>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHoler {
 
         var v = LayoutInflater.from(parent.context).inflate(R.layout.list_row_person, parent, false)
@@ -25,11 +25,13 @@ class SupplierAdapter (var data:List<Supplier>) : RecyclerView.Adapter<PersonHol
         var context = holder.constraintLayoutPerson.context
         holder.pName.text = data[position].name
         holder.pRating.text = data[position].rating
-        holder.pType.text=data[position].food_types
+        holder.pType.text = data[position].food_types
         Picasso.get().load(data[position].logo).into(holder.imageViewp)
+
+
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView.context, FoodActivity::class.java)
-            intent.putExtra("supplier",data[position])
+            intent.putExtra("supplier", data[position])
             context.startActivity(intent)
         }
     }
@@ -38,10 +40,11 @@ class SupplierAdapter (var data:List<Supplier>) : RecyclerView.Adapter<PersonHol
         return data.size
     }
 }
+
 class PersonHoler(v: View) : RecyclerView.ViewHolder(v) {
     var pName = v.findViewById<TextView>(R.id.textViewPName)
     var pType = v.findViewById<TextView>(R.id.textViewPType)
     var pRating = v.findViewById<TextView>(R.id.textViewPRating)
-    var imageViewp=v.findViewById<ImageView>(R.id.imageViewPerson)
+    var imageViewp = v.findViewById<ImageView>(R.id.imageViewPerson)
     var constraintLayoutPerson = v.findViewById<ConstraintLayout>(R.id.constraintLayoutP)
 }

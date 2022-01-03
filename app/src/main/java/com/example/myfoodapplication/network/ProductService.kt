@@ -12,4 +12,7 @@ interface ProductService {
     fun addItemToProduct(@Path("id")userId:String,@Path("oid")orderId:String, @Body product: Product): Call<Product>
     @GET("uesrs/{id}/order/{oid}/Product")
     fun  getProductById(@Path("id")userId:String,@Path("oid")orderId:String ): Call<List<Product>>
+    @DELETE("uesrs/{id}/order/{oid}/Product")
+    fun deletefromCart(@Path("id")userId:String,@Path("oid")orderId:String
+                       ): Call<Product>
 }

@@ -25,21 +25,36 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        val viewModel: OrderViewModel by viewModels()
 
+        ///////////////get from Intent ////////////////////////////
         var textViewDName = findViewById<TextView>(R.id.textViewDName)
         var textViewDPrice = findViewById<TextView>(R.id.textViewDPrice)
         var textViewDCategory = findViewById<TextView>(R.id.textViewCategory)
-        var textViewDCreatedAt = findViewById<TextView>(R.id.textViewCreatedAt)
-        var spinnerQuantity = findViewById<Spinner>(R.id.spinnerQuantity)
         var textviewDDescrepion = findViewById<TextView>(R.id.TextviewDDescrepion)
-        var imageView = findViewById<ImageView>(R.id.imageViewD)
-        var buttonDAdd = findViewById<Button>(R.id.btnDAdd)
+        var imageViewD = findViewById<ImageView>(R.id.imageViewD)
+        val foodDetail = intent.getSerializableExtra("Foods") as Food
+        textViewDName.setText(foodDetail.name)
+        textViewDPrice.setText(foodDetail.price)
+        textviewDDescrepion.setText(foodDetail.description)
+        textViewDCategory.setText(foodDetail.category)
+        Picasso.get().load(foodDetail.photo).into(imageViewD)
+        ///////////////end of get Intent ////////////////////////////
+
+
+
+        ///////////////CreatedAT////////////////////////////
+        var textViewDCreatedAt = findViewById<TextView>(R.id.textViewCreatedAt)
         var calendar = Calendar.getInstance()
         var dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
         var date = dateFormat.format(calendar.time)
         textViewDCreatedAt.text = date
+        ///////////////end of CreatedAT ////////////////////////////
 
+
+
+
+        /////////////// Quantity ////////////////////////////
+        var spinnerQuantity = findViewById<Spinner>(R.id.spinnerQuantity)
         var item: Any = 0
         var QuantityList = arrayOf(1, 2, 3, 4, 5)
         spinnerQuantity.adapter =
@@ -52,146 +67,176 @@ class DetailsActivity : AppCompatActivity() {
                 id: Long
             ) {
                 item = parent!!.getItemAtPosition(position)
-
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
-
         }
+        ///////////////end of Quantity ////////////////////////////
 
 
-        val FoodDetail = intent.getSerializableExtra("Foods") as Food
-        textViewDName.setText(FoodDetail.name)
-        textViewDPrice.setText(FoodDetail.price)
-        textviewDDescrepion.setText(FoodDetail.description)
-        textViewDCategory.setText(FoodDetail.category)
-        Picasso.get().load(FoodDetail.photo).into(imageView)
 
 
-        var userId = SharedPrefHelper.getUserId(this)
-//        var fId = FoodDetail.id
+
+        ///////////////button add to cart  ////////////////////////////
+        var buttonDAdd = findViewById<Button>(R.id.btnDAdd)
         buttonDAdd.setOnClickListener {
-            println("clicked")
-            var orderId = SharedPrefHelper.getOrderId(this)
-            if (orderId != "null") {
-                // TODO:1. create new order 2. add product 3. update total price
-
-                // create new Order
-                var order = Order(
-                    "",
-                    "",
-                    0,
-                    userId
-                )
-                viewModel.creatOrder(order.id, order.uesrId, order.total_price, order.order_date)
-                    .observeForever {
-                        if (it != null) {
-                            Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
-                            SharedPrefHelper.saveOrderId(this, it.id)
-                            SharedPrefHelper.getOrderId(this)
-                        } else {
-                            Toast.makeText(this, "the order not added", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                ///////////////end of create order////////////////////////////
-
-                // Add product to cart
-                val viewModel: ProductViewModel by viewModels()
+            var userId = SharedPrefHelper.getUserId(this)
+            var orderid = SharedPrefHelper.getOrderId(this)
+            val productViewModel: ProductViewModel by viewModels()
+            if (orderid.isNotEmpty()) {
                 var product = Product(
-                    textViewDCategory.text.toString(),
-                    textViewDCreatedAt.text.toString(),
-                    textviewDDescrepion.text.toString(),
+                    foodDetail.category,
+                    date,
+                    foodDetail.description,
                     "",
-                    textViewDName.text.toString(),
-                    orderId,
-                    FoodDetail.photo,
-                    textViewDPrice.text.toString(),
+                    foodDetail.name,
+                    orderid,
+                    foodDetail.photo,
+                    (foodDetail.price.toDouble() * spinnerQuantity.selectedItem.toString()
+                        .toDouble()).toString(),
                     item as Int
                 )
-                var mutableLiveData = MutableLiveData<Product>()
-                viewModel.addItemToProduct(
-                    product.category,
-                    product.createdAt,
-                    product.description,
-                    product.id,
-                    product.name,
-                    product.orderId,
-                    product.photo,
-                    product.price,
-                    product.quantity
-                ).observeForever {
+
+                productViewModel.addItemToProduct(product,userId).observeForever {
                     if (it != null) {
-                        mutableLiveData.postValue(it)
+                        Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
+//                        SharedPrefHelper.saveOrderId(this, it.id)
+
                     } else {
-                        mutableLiveData.postValue(
-                            Product(
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                0
-                            )
-                        )
+                        Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+
                     }
                 }
-
-                /////////////// end of add product /////////////////////////////////
-
-
-            } else {
-                // TODO:1. add product 2. update total price for order
-                val viewModel: ProductViewModel by viewModels()
-                var product = Product(
-                    textViewDCategory.text.toString(),
-                    textViewDCreatedAt.text.toString(),
-                    textviewDDescrepion.text.toString(),
-                    "",
-                    textViewDName.text.toString(),
-                    orderId,
-                    FoodDetail.photo,
-                    textViewDPrice.text.toString(),
-                    item as Int
-                )
-                var mutableLiveData = MutableLiveData<Product>()
-                viewModel.addItemToProduct(
-                    product.category,
-                    product.createdAt,
-                    product.description,
-                    product.id,
-                    product.name,
-                    product.orderId,
-                    product.photo,
-                    product.price,
-                    product.quantity
-
-                ).observeForever {
-
-                    if (it != null) {
-                        mutableLiveData.postValue(it)
-                    } else {
-                        mutableLiveData.postValue(
-                            Product(
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                0
-                            )
-                        )
-                    }
-                }
-
             }
+            ///////////////end of the button add ////////////////////////////
+
+
         }
     }
 }
+
+//        var fId = FoodDetail.id
+//        buttonDAdd.setOnClickListener {
+//            println("clicked")
+//            var orderId = SharedPrefHelper.getOrderId(this)
+//            if (orderId == "") {
+//                // TODO:1. create new order 2. add product 3. update total price
+//
+//                // create new Order
+//                var order = Order(
+//                    "",
+//                    date,
+//                    "0",
+//                    userId
+//                )
+//                viewModel.creatOrder( order.uesrId, order.total_price,order.order_date)
+//                    .observeForever {
+//                        if (it != null) {
+//                            Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
+//                            SharedPrefHelper.saveOrderId(this, it.id)
+////                            SharedPrefHelper.getOrderId(this)
+//                        } else {
+//                            Toast.makeText(this, "the order not added", Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//                ///////////////end of create order////////////////////////////
+//
+//                // Add product to cart
+//                val viewModel: ProductViewModel by viewModels()
+//                var product = Product(
+//                    textViewDCategory.text.toString(),
+//                    textViewDCreatedAt.text.toString(),
+//                    textviewDDescrepion.text.toString(),
+//                    "",
+//                    textViewDName.text.toString(),
+//                    orderId,
+//                    FoodDetail.photo,
+//                    textViewDPrice.text.toString(),
+//                    item as Int
+//                )
+//                var mutableLiveData = MutableLiveData<Product>()
+//                viewModel.addItemToProduct(
+//                    product.category,
+//                    product.createdAt,
+//                    product.description,
+//                    product.id,
+//                    product.name,
+//                    product.orderId,
+//                    product.photo,
+//                    product.price,
+//                    product.quantity
+//                ).observeForever {
+//                    if (it != null) {
+//                        mutableLiveData.postValue(it)
+//                    } else {
+//                        mutableLiveData.postValue(
+//                            Product(
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                0
+//                            )
+//                        )
+//                    }
+//                }
+//
+//                /////////////// end of add product /////////////////////////////////
+//
+//
+//            } else {
+//                // TODO:1. add product 2. update total price for order
+//                val viewModel: ProductViewModel by viewModels()
+//                var product = Product(
+//                    textViewDCategory.text.toString(),
+//                    textViewDCreatedAt.text.toString(),
+//                    textviewDDescrepion.text.toString(),
+//                    "",
+//                    textViewDName.text.toString(),
+//                    orderId,
+//                    FoodDetail.photo,
+//                    textViewDPrice.text.toString(),
+//                    item as Int
+//                )
+//                var mutableLiveData = MutableLiveData<Product>()
+//                viewModel.addItemToProduct(
+//                    product.category,
+//                    product.createdAt,
+//                    product.description,
+//                    product.id,
+//                    product.name,
+//                    product.orderId,
+//                    product.photo,
+//                    product.price,
+//                    product.quantity
+//
+//                ).observeForever {
+//
+//                    if (it != null) {
+//                        mutableLiveData.postValue(it)
+//                    } else {
+//                        mutableLiveData.postValue(
+//                            Product(
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                "",
+//                                0
+//                            )
+//                        )
+//                    }
+//                }
+//
+//            }
+////        }
+//    }
+//}

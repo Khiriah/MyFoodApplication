@@ -3,14 +3,21 @@ package com.example.myfoodapplication.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
+import androidx.activity.viewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.animation.content.Content
 import com.example.myfoodapplication.Model.Product
 import com.example.myfoodapplication.R
+import com.example.myfoodapplication.Util.SharedPrefHelper
+import com.example.myfoodapplication.ViewModel.ProductViewModel
+import com.example.myfoodapplication.network.API
+import com.example.myfoodapplication.network.ProductService
 import com.squareup.picasso.Picasso
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class ProductAdapter (var data: List<Product>) : RecyclerView.Adapter<CartHolder>() {
@@ -21,41 +28,36 @@ class ProductAdapter (var data: List<Product>) : RecyclerView.Adapter<CartHolder
         return CartHolder(v)
     }
 
-    override fun onBindViewHolder(holder: CartHolder, position: Int) {
-       // var spinner = holder.spinner.context
+    override fun onBindViewHolder( holder: CartHolder, position: Int) {
+      // var spinner = holder.spinner.context
         holder.oName.text = data[position].name
         holder.oPrice.text = data[position].price
         Picasso.get().load(data[position].photo).into(holder.orderImageView)
 //        holder.OrderButton.setOnClickListener {
-//            val viewModel: OrderViewModel by viewModels()
-//
-//
-//            val order= Order(
-//                "",
-//                "",
-//                0,
-//
-//
-//
-//
-//            )
-//
-//            var oId=order.id
-//            var order_date=order.order_date
-//            var total_price=order.total_price
-//
-//
-//            OrderViewModel.addItemToOrder(oId,order_date,total_price)
-//
-//
 //        }
 
-
+        ///////////////imageViewRemove////////////////////////////
 holder.imageViewRemove.setOnClickListener {
-//    fun deleteItem(cart: Cart?) {
-//        CartViewModel.removeItemFromCart(Cart)
-  }
-
+    var context = holder.itemView.context
+    var userId = SharedPrefHelper.getUserId(context)
+    var orderid = SharedPrefHelper.getOrderId(context)
+//    val productViewModel: ProductViewModel by viewModels()
+//       var product = Product(
+//           "",
+//           "",
+//           "",
+//           "",
+//           "",
+//           orderid,
+//           "",
+//           "",
+//           1
+//       )
+    ProductViewModel().deletefromCart(userId,data[position].orderId).observeForever {
+//        data.rem
+        }
+    }
+    ///////////////end of imageViewRemove ////////////////////////////
     }
 
 

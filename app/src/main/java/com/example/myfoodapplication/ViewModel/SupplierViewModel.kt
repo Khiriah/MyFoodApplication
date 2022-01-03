@@ -10,7 +10,7 @@ class SupplierViewModel : ViewModel() {
 
     var SupplierRepo= SupplierRepository()
 
-    fun getSupplier(): LiveData<List<Supplier>> {
-        return SupplierRepo.getallSupplier()
+    fun getallSuppliers(): LiveData<List<Supplier>> {
+        return SupplierRepo.getallSuppliers()
     }
 }

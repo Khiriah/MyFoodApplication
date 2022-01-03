@@ -7,18 +7,8 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface OrderService {
-
-
-
     @POST("uesrs/{id}/order")
     fun creatOrder(@Path ("id")userId:String,@Body order: Order): Call<Order>
-
-
-//    @DELETE("order/{id}")
-//    fun deleteCart(): Call<Order>
-
-
-
 }
 
 

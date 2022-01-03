@@ -41,26 +41,17 @@ class ProductRepository {
 
 
     fun addItemToProduct(
-         category: String,
-         createdAt: String,
-         description: String,
-         id: String,
-         name: String,
-         orderId: String,
-         photo: String,
-         price: String,
-         quantity: Int
+        product: Product,
+        userid: String
     ): MutableLiveData<Product> {
         var mutableLiveData = MutableLiveData<Product>()
 //       var userId = context?.let { SharedPrefHelper.getUserId(it.applicationContext) }
 
 
-        fun getall(context: Context){
-        var  userId=   SharedPrefHelper.getUserId(context )
 
 
         val callCartList =
-            productService.addItemToProduct(userId ,orderId, Product(category,createdAt,description,id,name,orderId,photo,price,quantity))
+            productService.addItemToProduct(userid ,product.orderId, product)
         callCartList.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                 mutableLiveData.postValue(response.body())
@@ -69,7 +60,26 @@ class ProductRepository {
             override fun onFailure(call: Call<Product>, t: Throwable) {
                 println("Error")
             }
-        })}
+        })
+        return mutableLiveData
+    }
+
+    fun deletefromCart(
+        userid: String,
+        orderId: String
+    ): MutableLiveData<Product> {
+        var mutableLiveData = MutableLiveData<Product>()
+        val callCartList =
+            productService.deletefromCart(userid ,orderId)
+            callCartList.enqueue(object : Callback<Product> {
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                mutableLiveData.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                println("Error")
+            }
+        })
         return mutableLiveData
     }
 

@@ -9,6 +9,7 @@ import com.example.myfoodapplication.R
 import com.example.myfoodapplication.adapter.FragmentAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.messaging.FirebaseMessaging
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
         var ftabLayout=findViewById<TabLayout>(R.id.FtabLayout)
       viewPager.adapter= FragmentAdapter(this)
      //   viewPager.setPageTransformer(ZoomOutPageTransformer())
-        var titles= arrayOf("Home","Cart","More")
+        var titles= arrayOf(getString(R.string.home),getString(R.string.cart),getString(R.string.more))
         var icons= arrayOf(R.drawable.ic_baseline_home_24,R.drawable.ic_baseline_add_shopping_cart_24,R.drawable.ic_baseline_more_horiz_24)
         TabLayoutMediator(ftabLayout,viewPager){ tab, position ->
             tab.text= titles[position]

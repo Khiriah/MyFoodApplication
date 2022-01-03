@@ -32,7 +32,6 @@ class RegisterActivity : AppCompatActivity() {
         var date_of_birth = findViewById<TextInputEditText>(R.id.editTextdate_of_birthtext)
         var gender1=findViewById<RadioGroup>(R.id.radioGroup)
         var gender:String = ""
-//     var image= findViewById<ImageView>(R.id.textViewLogin)
         auth1 = Firebase.auth
 
         gender1.setOnCheckedChangeListener { group, checkedId ->

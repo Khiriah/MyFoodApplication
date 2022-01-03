@@ -22,7 +22,7 @@ class SharedPrefHelper {
         }
         fun getOrderId(context: Context): String {
             var pref = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-            var id=  pref.getString("o_id","null")
+            var id=  pref.getString("o_id","")
             return id!!
         }
     }

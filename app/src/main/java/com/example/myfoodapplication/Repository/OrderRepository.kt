@@ -61,16 +61,15 @@ class OrderRepository {
 
 
     fun creatOrder(
-        id: String,
         uesrId: String,
-        total_price: Int,
-        order_date: String
+        order_date:String,
+        total_price:String
     ): MutableLiveData<Order> {
         var mutableLiveData = MutableLiveData<Order>()
 //       var userId = context?.let { SharedPrefHelper.getUserId(it.applicationContext) }
 
         val callCartList =
-            OrderService.creatOrder(uesrId, Order(id, order_date, total_price, uesrId))
+            OrderService.creatOrder(uesrId, Order( "",order_date, total_price, uesrId))
         callCartList.enqueue(object : Callback<Order> {
             override fun onResponse(call: Call<Order>, response: Response<Order>) {
                 mutableLiveData.postValue(response.body())

@@ -32,13 +32,12 @@ class OrderViewModel  : ViewModel() {
 //    }
 //
     fun creatOrder(
-    id: String,
     uesrId: String,
-    total_price: Int,
+    total_price: String,
     order_date: String
 ): LiveData<Order> {
         var mutableLiveData = MutableLiveData<Order>()
-    orderRepo.creatOrder(id,uesrId,total_price,order_date)
+    orderRepo.creatOrder(uesrId,order_date,total_price)
             .observeForever {
               if (it.id.isNotEmpty()) {
                     mutableLiveData.postValue(it)

@@ -11,24 +11,26 @@ class ProductViewModel : ViewModel() {
     var productRepo = ProductRepository()
 
     fun addItemToProduct(
-        category: String,
-        createdAt: String,
-        description: String,
-        id: String,
-        name: String,
-        orderId: String,
-        photo: String,
-        price: String,
-        quantity: Int
+       product: Product,
+       userid: String
     ): MutableLiveData<Product> {
         var mutableLiveData = MutableLiveData<Product>()
-        productRepo.addItemToProduct(category,createdAt,description,id,name,orderId,photo,price,quantity)
+        productRepo.addItemToProduct(product,userid)
             .observeForever {
-//                if (it.id.isNotEmpty()) {
                   mutableLiveData.postValue(it)
-//                } else {
-//                    mutableLiveData.postValue(false)
-//                }
+            }
+        return mutableLiveData
+    }
+
+    fun deletefromCart(
+        userid: String,
+        orderId: String
+
+    ): MutableLiveData<Product> {
+        var mutableLiveData = MutableLiveData<Product>()
+        productRepo.deletefromCart(orderId,userid)
+            .observeForever {
+                mutableLiveData.postValue(it)
             }
         return mutableLiveData
     }

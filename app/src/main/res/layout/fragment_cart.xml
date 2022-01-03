@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.CartFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -48,9 +51,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="8dp"
-            android:text="Place Order"
+            android:text="@string/place_order"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
 
     </LinearLayout>
 
+    </ScrollView>
 </FrameLayout>

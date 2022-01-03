@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginTop="32dp"
-        android:text="Offers notification"
+        android:text="@string/offers_notification"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -35,7 +35,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="289dp"
-        android:text="Language"
+        android:text="@string/language"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="168dp"
-        android:text="Setting"
+        android:text="@string/setting"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,8 +73,23 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="21dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:textColorLink="#EAE196"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <Spinner
+        android:id="@+id/spinnerLanguage"
+        android:layout_width="169dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

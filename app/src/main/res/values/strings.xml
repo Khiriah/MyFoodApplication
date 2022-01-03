@@ -2,4 +2,35 @@
     <string name="app_name">MyFoodApplication</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="help1">We work between 8am and 2am throughout the year. However, the delivery time depends on the business service. To enable our 24/7 food ordering service, you can place and schedule an order for delivery during our business hours.</string>
+    <string name="what_are_cozymeal_working_hours">What are CozyMeal working hours?</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="price">Price</string>
+    <string name="name">Name</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="passoword">Passoword</string>
+    <string name="sign_up_here">Sign Up here</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_account">Don\'t have account?</string>
+    <string name="email">Email</string>
+    <string name="profile_info">Profile Info :</string>
+    <string name="update">Update</string>
+    <string name="login_in_here">Login here</string>
+    <string name="phone">Phone</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="gender">Gender :</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="i_have_an_account">I have an account!</string>
+    <string name="offers_notification">Offers notification</string>
+    <string name="language">Language</string>
+    <string name="place_order">Place Order</string>
+    <string name="my_profile">My Profile</string>
+    <string name="my_vouchers">My vouchers</string>
+    <string name="help_and_support">Help and Support</string>
+    <string name="setting">Setting</string>
+    <string name="more">More</string>
+    <string name="Lang">عربي</string>
 </resources>

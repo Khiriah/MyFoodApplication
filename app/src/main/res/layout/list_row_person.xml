@@ -33,14 +33,14 @@
 
             <TextView
                 android:id="@+id/textViewPName"
-                android:layout_width="169dp"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
                 android:layout_marginStart="16dp"
                 android:shadowColor="#101010"
                 android:text="Name"
                 android:textColor="#101010"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textViewPType"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,6 @@
                 android:id="@+id/imageViewPerson"
                 android:layout_width="0dp"
                 android:layout_height="206dp"
-                android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -59,27 +58,28 @@
 
             <TextView
                 android:id="@+id/textViewPType"
-                android:layout_width="302dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="Type"
                 android:textColor="#3E3D3D"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.686"
+                app:layout_constraintHorizontal_bias="0.095"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPName" />
 
             <TextView
                 android:id="@+id/textViewPRating"
-                android:layout_width="63dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="55dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="4dp"
                 android:text="4.5"
                 android:textColor="#3E3D3D"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+                app:layout_constraintHorizontal_bias="0.937"
                 app:layout_constraintStart_toEndOf="@+id/textViewPName"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewPerson" />
 
@@ -88,8 +88,8 @@
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:layout_width="38dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewPerson" />
 

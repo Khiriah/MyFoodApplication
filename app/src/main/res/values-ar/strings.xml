@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MyFoodApplication</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="help1">نعمل بين الساعة 8 صباحًا و 2 صباحًا على مدار العام. ومع ذلك ، فإن وقت التسليم يعتمد على الأسر المنتجة. لتمكين خدمة طلب الطعام لدينا على مدار الساعة طوال أيام الأسبوع ، يمكنك تقديم طلب للتسليم وجدولته خلال ساعات العمل لدينا.</string>
+    <string name="what_are_cozymeal_working_hours">ما هي ساعات عمل كوزي ميل؟</string>
+    <string name="add_to_cart">إضافة إلى السلة</string>
+    <string name="price">السعر</string>
+    <string name="name">الإسم</string>
+    <string name="home">الرئيسية</string>
+    <string name="cart">السلة</string>
+    <string name="more">المزيد</string>
+    <string name="passoword">الرقم السري </string>
+    <string name="sign_up_here">تسجيل جديد</string>
+    <string name="login">التسجيل</string>
+    <string name="don_t_have_account">ليس لديك حساب؟ </string>
+    <string name="email">الإيميل</string>
+    <string name="my_profile">حسابي</string>
+    <string name="profile_info">معلومات الحساب :</string>
+    <string name="update">تحديث</string>
+    <string name="login_in_here">سجل هنا</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="date_of_birth">تاريخ الميلاد</string>
+    <string name="sign_up">تسجيل جديد</string>
+    <string name="gender">الجنس :</string>
+    <string name="male">ذكر</string>
+    <string name="female">أنثى</string>
+    <string name="i_have_an_account">لدي حساب !</string>
+    <string name="offers_notification">إشعارات العروض</string>
+    <string name="language">اللغة</string>
+    <string name="setting">الإعدادات</string>
+    <string name="place_order">Place Order</string>
+    <string name="my_vouchers">كوبوناتي</string>
+    <string name="help_and_support">للمساعدة</string>
+    <string name="Lang">English</string>
+</resources>
