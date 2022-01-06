@@ -79,16 +79,4 @@
         app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Spinner
-        android:id="@+id/spinnerCart"
-        android:layout_width="132dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cartImageView"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

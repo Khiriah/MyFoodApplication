@@ -7,12 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.myfoodapplication.More.HelpActivity
-import com.example.myfoodapplication.More.InvoicesActivity
-import com.example.myfoodapplication.More.ProfileActivity
-import com.example.myfoodapplication.More.SettingActivity
+import com.example.myfoodapplication.ui.view.More.HelpActivity
+import com.example.myfoodapplication.ui.view.More.InvoicesActivity
+import com.example.myfoodapplication.ui.view.More.ProfileActivity
+import com.example.myfoodapplication.ui.view.More.SettingActivity
 import com.example.myfoodapplication.R
-import com.example.myfoodapplication.ui.view.DetailsActivity
 
 
 class MoreFragment : Fragment() {

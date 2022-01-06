@@ -1,4 +1,4 @@
-package com.example.myfoodapplication.More
+package com.example.myfoodapplication.ui.view.More
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

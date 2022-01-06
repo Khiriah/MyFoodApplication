@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.Model.Order
+import com.example.myfoodapplication.Model.User
 import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.network.API
 import com.example.myfoodapplication.network.OrderService
@@ -81,6 +82,30 @@ class OrderRepository {
         })
         return mutableLiveData
     }
+    fun updatetotalPrice( order: Order,
+                    userId:String
+    ): MutableLiveData<Order> {
+
+        var mutableLiveData= MutableLiveData<Order>()
+
+
+        val callCartList =
+            OrderService.updatetotalPrice(userId,order)
+
+        callCartList.enqueue(object : Callback<Order> {
+            override fun onResponse(call: Call<Order>, response: Response<Order>) {
+                mutableLiveData.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<Order>, t: Throwable) {
+
+            }
+
+        })
+
+
+        return mutableLiveData
+    }
 }
 
 
@@ -111,15 +136,7 @@ class OrderRepository {
 //        }
 //        return mutableTotalPrice
 //    }
-//    fun calculateCartTotal() {
-//        if (mutableLiveData.value == null) return
-//        var total = 0.0
-//        val cartItemList: List<Food>? = mutableLiveData.value
-//        for (cartItem in cartItemList!!) {
-//            total += cartItem.getProduct().getPrice() * cartItem.getQuantity()
-//        }
-//        mutableTotalPrice.setValue(total)
-//    }
+
 //
 //
 //

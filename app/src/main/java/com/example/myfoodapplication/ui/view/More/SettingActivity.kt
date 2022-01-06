@@ -1,4 +1,4 @@
-package com.example.myfoodapplication.More
+package com.example.myfoodapplication.ui.view.More
 
 import android.content.res.Configuration
 import android.content.res.Resources

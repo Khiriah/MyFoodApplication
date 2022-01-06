@@ -17,6 +17,8 @@ import com.example.myfoodapplication.R
 import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.ViewModel.OrderViewModel
 import com.example.myfoodapplication.ViewModel.ProductViewModel
+import com.google.common.collect.Iterables.size
+import com.google.common.collect.Iterators.size
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.*
@@ -41,7 +43,6 @@ class DetailsActivity : AppCompatActivity() {
         ///////////////end of get Intent ////////////////////////////
 
 
-
         ///////////////CreatedAT////////////////////////////
         var textViewDCreatedAt = findViewById<TextView>(R.id.textViewCreatedAt)
         var calendar = Calendar.getInstance()
@@ -49,8 +50,6 @@ class DetailsActivity : AppCompatActivity() {
         var date = dateFormat.format(calendar.time)
         textViewDCreatedAt.text = date
         ///////////////end of CreatedAT ////////////////////////////
-
-
 
 
         /////////////// Quantity ////////////////////////////
@@ -68,6 +67,7 @@ class DetailsActivity : AppCompatActivity() {
             ) {
                 item = parent!!.getItemAtPosition(position)
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
@@ -75,9 +75,30 @@ class DetailsActivity : AppCompatActivity() {
         ///////////////end of Quantity ////////////////////////////
 
 
+//        var textViewDCreatedAt=findViewById<TextView>(R.id.textViewDCreatedAt)
+        var userId = SharedPrefHelper.getUserId(this)
+        var orderid = SharedPrefHelper.getOrderId(this)
+        if (orderid.isEmpty()) {
+            val viewModel: OrderViewModel by viewModels()
+            var calendar = Calendar.getInstance()
+            var dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
+            var date = dateFormat.format(calendar.time)
+            textViewDCreatedAt.text = date
 
+            var order = Order("", date, "", userId)
 
+            viewModel.creatOrder(order.uesrId, "", order.order_date)
+                .observeForever {
+                    if (it != null) {
+                        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
+                        SharedPrefHelper.saveOrderId(this, it.id)
 
+                    } else {
+                        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
+
+                    }
+                }
+        }
         ///////////////button add to cart  ////////////////////////////
         var buttonDAdd = findViewById<Button>(R.id.btnDAdd)
         buttonDAdd.setOnClickListener {
@@ -98,7 +119,7 @@ class DetailsActivity : AppCompatActivity() {
                     item as Int
                 )
 
-                productViewModel.addItemToProduct(product,userId).observeForever {
+                productViewModel.addItemToProduct(product, userId).observeForever {
                     if (it != null) {
                         Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
 //                        SharedPrefHelper.saveOrderId(this, it.id)
@@ -115,6 +136,7 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 }
+
 
 //        var fId = FoodDetail.id
 //        buttonDAdd.setOnClickListener {

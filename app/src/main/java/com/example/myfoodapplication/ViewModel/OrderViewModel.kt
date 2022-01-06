@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myfoodapplication.Model.Order
+import com.example.myfoodapplication.Model.User
 
 import com.example.myfoodapplication.Repository.OrderRepository
 
@@ -46,6 +47,15 @@ class OrderViewModel  : ViewModel() {
                 }
             }
         return mutableLiveData
+    }
+    fun updatetotalPrice(
+    order: Order,
+    userId:String
+
+    ):LiveData<Order> {
+        return orderRepo.updatetotalPrice(order,userId)
+
+
     }
 
 

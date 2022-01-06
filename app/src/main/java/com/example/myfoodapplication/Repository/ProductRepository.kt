@@ -1,6 +1,7 @@
 package com.example.myfoodapplication.Repository
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.myfoodapplication.Model.Order
 import com.example.myfoodapplication.Model.Product
@@ -14,7 +15,7 @@ import retrofit2.Response
 class ProductRepository {
 
     val productService = API.getInstance().create(ProductService::class.java)
-
+/***********************************************************/
     fun getProductById(
         userid: String,
         orderId: String
@@ -36,22 +37,22 @@ class ProductRepository {
         })
         return mutableLiveData
     }
+    /***********************************************************/
 
 
 
-
+    /***********************************************************/
     fun addItemToProduct(
         product: Product,
-        userid: String
+        userid: String,
+
     ): MutableLiveData<Product> {
         var mutableLiveData = MutableLiveData<Product>()
 //       var userId = context?.let { SharedPrefHelper.getUserId(it.applicationContext) }
 
-
-
-
         val callCartList =
-            productService.addItemToProduct(userid ,product.orderId, product)
+            productService.
+            addItemToProduct(userid ,product.orderId, product)
         callCartList.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                 mutableLiveData.postValue(response.body())
@@ -63,14 +64,16 @@ class ProductRepository {
         })
         return mutableLiveData
     }
+    /***********************************************************/
 
     fun deletefromCart(
         userid: String,
-        orderId: String
-    ): MutableLiveData<Product> {
+        orderId: String,
+        pId:String
+    ): LiveData<Product> {
         var mutableLiveData = MutableLiveData<Product>()
         val callCartList =
-            productService.deletefromCart(userid ,orderId)
+            productService.deletefromCart(userid ,orderId,pId)
             callCartList.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                 mutableLiveData.postValue(response.body())
@@ -84,4 +87,4 @@ class ProductRepository {
     }
 
 }
-
+/***********************************************************/

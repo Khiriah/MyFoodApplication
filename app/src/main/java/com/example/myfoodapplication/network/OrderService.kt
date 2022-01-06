@@ -9,6 +9,9 @@ import retrofit2.http.*
 interface OrderService {
     @POST("uesrs/{id}/order")
     fun creatOrder(@Path ("id")userId:String,@Body order: Order): Call<Order>
+    @PUT("uesrs/{id}/order")
+    fun updatetotalPrice(@Path("id")userId:String, @Body order: Order): Call<Order>
+
 }
 
 

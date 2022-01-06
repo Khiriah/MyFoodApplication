@@ -21,40 +21,18 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-//        FirebaseMessaging.getInstance().token.addOnCompleteListener {
-//            var token = it.result.toString()
-//            println(token)
-        var textViewDCreatedAt=findViewById<TextView>(R.id.textViewDCreatedAt)
-        var userId = SharedPrefHelper.getUserId(this)
-        var orderid = SharedPrefHelper.getOrderId(this)
-        if(orderid.isEmpty()) {
-            val viewModel: OrderViewModel by viewModels()
-            var calendar = Calendar.getInstance()
-            var dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
-            var date = dateFormat.format(calendar.time)
-            textViewDCreatedAt.text = date
-            var order = Order("", date, "0", userId)
+        FirebaseMessaging.getInstance().token.addOnCompleteListener {
+            var token = it.result.toString()
+            println(token)
 
-            viewModel.creatOrder(order.uesrId, order.total_price, order.order_date)
-                .observeForever {
-                    if (it != null) {
-                        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
-                        SharedPrefHelper.saveOrderId(this, it.id)
-
-                    } else {
-                      Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
-
-                    }
-                }
-        }
 
 
             Handler().postDelayed({
-                if(SharedPrefHelper.getUserId(this)=="null"){
+                if (SharedPrefHelper.getUserId(this) == "null") {
                     var intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
 
-                }else{
+                } else {
                     var intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
@@ -63,3 +41,4 @@ class SplashActivity : AppCompatActivity() {
             }, 5000)
         }
     }
+}

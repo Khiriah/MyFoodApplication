@@ -1,4 +1,4 @@
-package com.example.myfoodapplication.More
+package com.example.myfoodapplication.ui.view.More
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +11,6 @@ import com.example.myfoodapplication.ViewModel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import org.w3c.dom.Text
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var auth1: FirebaseAuth

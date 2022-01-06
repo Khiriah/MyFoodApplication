@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myfoodapplication">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,19 +14,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFoodApplication"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.view.OrderActivity"
+            android:exported="false" />
 
+        <service
+            android:name=".FirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity
-            android:name=".More.HelpActivity"
+            android:name="com.example.myfoodapplication.ui.view.More.HelpActivity"
             android:exported="false" />
         <activity
-            android:name=".More.InvoicesActivity"
+            android:name="com.example.myfoodapplication.ui.view.More.InvoicesActivity"
             android:exported="false" />
         <activity
-            android:name=".More.ProfileActivity"
+            android:name="com.example.myfoodapplication.ui.view.More.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".More.SettingActivity"
+            android:name="com.example.myfoodapplication.ui.view.More.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".ui.view.DetailsActivity"

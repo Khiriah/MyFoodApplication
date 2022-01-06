@@ -23,12 +23,13 @@ class ProductViewModel : ViewModel() {
     }
 
     fun deletefromCart(
-        userid: String,
+        pId: String,
+        userId: String,
         orderId: String
 
     ): MutableLiveData<Product> {
         var mutableLiveData = MutableLiveData<Product>()
-        productRepo.deletefromCart(orderId,userid)
+        productRepo.deletefromCart(userId,orderId,pId)
             .observeForever {
                 mutableLiveData.postValue(it)
             }
@@ -37,12 +38,8 @@ class ProductViewModel : ViewModel() {
     fun getProductById(
         userid: String,
         orderId: String
-    ): MutableLiveData<List<Product>> {
-        var mutableLiveData = MutableLiveData<List<Product>>()
-        productRepo.getProductById(userid,orderId)
-            .observeForever {
-                mutableLiveData.postValue(it)
-            }
-        return mutableLiveData
+    ): LiveData<List<Product>> {
+
+        return productRepo.getProductById(userid,orderId)
     }
 }
