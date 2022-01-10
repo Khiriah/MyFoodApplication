@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.CartFragment">
+    tools:context=".ui.view.Fragment.CartFragment">
+
+
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,6 +28,8 @@
             tools:listitem="@layout/list_raw_cart"
             tools:itemCount="2"
             />
+
+
 
         <Space
             android:layout_width="match_parent"
@@ -57,4 +64,6 @@
     </LinearLayout>
 
     </ScrollView>
+
 </FrameLayout>
+

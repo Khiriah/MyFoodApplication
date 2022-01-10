@@ -1,45 +1,30 @@
-package com.example.myfoodapplication.Fragment
+package com.example.myfoodapplication.ui.view.Fragment
 
-import android.Manifest
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Context.LOCATION_SERVICE
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.location.Geocoder
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
-import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.R
-import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.ViewModel.SupplierViewModel
-import com.example.myfoodapplication.adapter.ProductAdapter
 import com.example.myfoodapplication.adapter.SupplierAdapter
-import com.example.myfoodapplication.ui.view.HomeActivity
-import java.util.*
+import android.content.Intent.getIntent
+
+
+
 
 
 class HomeFragment : Fragment() {
 
     lateinit var textViewLoction: TextView
+    lateinit var adapter: SupplierAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,23 +35,11 @@ class HomeFragment : Fragment() {
         var context=inflater.context
         var v = inflater.inflate(R.layout.fragment_home, container, false)
         var pRecyclerView = v.findViewById<RecyclerView>(R.id.recyclerViewP)
-//      var pSearchView = v.findViewById<SearchView>(R.id.searchViewP)
-       textViewLoction = v.findViewById<TextView>(R.id.textViewLoction)
-//        checkPermissionForLocation(context,HomeActivity())
-//        pSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                if(ProductAdapter.contains(query))
-//                    adapter.filter.filter(query)
-//                else
-//                    Toast.makeText(this@MainActivity, "City is not found", Toast.LENGTH_SHORT).show()
-//
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                adapter.filter.filter(newText)
-//                return false
-//            }
+      var pSearchView = v.findViewById<SearchView>(R.id.searchViewP)
+       textViewLoction = v.findViewById(R.id.textViewLoction)
+        val get = getIntent().getStringExtra("i")
+//        val get= getActivity()!!.getIntent().getExtras()!!.getString("i")
+        textViewLoction.text=(get)
 
         val viewModel: SupplierViewModel by viewModels()
 
@@ -74,6 +47,26 @@ class HomeFragment : Fragment() {
         viewModel.getallSuppliers().observe(this, { list ->
 //            var supID = list[0].id
             pRecyclerView.adapter = SupplierAdapter(list)
+
+        })
+
+
+        pSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+
+                adapter.filter.filter(query)
+                return false
+            }
+
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+
+
+                pRecyclerView.adapter = adapter
+                return false
+            }
+
 
         })
         return v

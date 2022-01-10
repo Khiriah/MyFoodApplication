@@ -1,4 +1,4 @@
-package com.example.myfoodapplication.Fragment
+package com.example.myfoodapplication.ui.view.Fragment
 
 import android.content.Intent
 import android.os.Bundle

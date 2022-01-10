@@ -4,6 +4,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +16,16 @@ import com.example.myfoodapplication.ui.view.FoodActivity
 import com.squareup.picasso.Picasso
 
 
-class SupplierAdapter(var data: List<Supplier>) : RecyclerView.Adapter<PersonHoler>() {
+class SupplierAdapter(var data: List<Supplier>) : RecyclerView.Adapter<PersonHoler>(),
+
+    Filterable {
+    var dataSearch: ArrayList<Supplier>
+
+    init {
+        dataSearch = ArrayList()
+        dataSearch.addAll(data)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHoler {
 
         var v = LayoutInflater.from(parent.context).inflate(R.layout.list_row_person, parent, false)
@@ -38,6 +49,40 @@ class SupplierAdapter(var data: List<Supplier>) : RecyclerView.Adapter<PersonHol
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(p0: CharSequence?): Filter.FilterResults {
+                var listFilter = ArrayList<Supplier>();
+                if (p0 == null || p0.isEmpty()) {
+                    listFilter.addAll(data)
+                } else {
+                    val filterPattern: String = p0.toString().toLowerCase().trim()
+                    for (item in data) {
+                        if (item.name.toLowerCase().contains(filterPattern)) {
+                            listFilter.add(item)
+                        }
+                    }
+                }
+                val results = Filter.FilterResults()
+                results.values = listFilter
+                return results;
+            }
+
+            override fun publishResults(p0: CharSequence?, p1: Filter.FilterResults?) {
+
+                dataSearch.clear()
+
+                var x = p1?.values as ArrayList<Supplier>
+
+                println(x)
+                dataSearch.addAll(x)
+
+                notifyDataSetChanged()
+            }
+        }
+
     }
 }
 

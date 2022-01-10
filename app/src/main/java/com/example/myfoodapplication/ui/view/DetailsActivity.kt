@@ -1,15 +1,10 @@
 package com.example.myfoodapplication.ui.view
 
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.MutableLiveData
-import com.example.myfoodapplication.Fragment.CartFragment
 import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.Model.Order
 import com.example.myfoodapplication.Model.Product
@@ -17,8 +12,6 @@ import com.example.myfoodapplication.R
 import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.ViewModel.OrderViewModel
 import com.example.myfoodapplication.ViewModel.ProductViewModel
-import com.google.common.collect.Iterables.size
-import com.google.common.collect.Iterators.size
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.*
@@ -94,7 +87,7 @@ class DetailsActivity : AppCompatActivity() {
                         SharedPrefHelper.saveOrderId(this, it.id)
 
                     } else {
-                        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Erorr", Toast.LENGTH_SHORT).show()
 
                     }
                 }

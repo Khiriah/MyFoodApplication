@@ -19,14 +19,15 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="98dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginTop="128dp"
         android:layout_marginEnd="153dp"
         android:text="@string/my_profile"
         android:textSize="20sp"
         android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,6 +58,7 @@
         android:gravity="center_vertical"
         android:text="@string/name"
         android:textSize="20sp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
@@ -72,6 +74,7 @@
         android:background="#EFE8E8"
         android:gravity="center_vertical"
         android:text="@string/date_of_birth"
+        android:drawableStart="@drawable/ic_baseline_perm_contact_calendar_24"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,6 +123,7 @@
         android:background="#EFE8E8"
         android:gravity="center_vertical"
         android:text="@string/phone"
+
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

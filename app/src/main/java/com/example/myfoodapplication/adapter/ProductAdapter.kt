@@ -34,33 +34,6 @@ class ProductAdapter (var data: MutableList<Product>) : RecyclerView.Adapter<Car
 
 
 
-        /*********************OrderUbdateButton*******************************/
-     holder.OrderButton.setOnClickListener {
-          var totalPrice : Double = 0.0
-           for (i in 1..data.size){
-            totalPrice=totalPrice + data[position].price.toDouble()
-         }
-           var context = holder.itemView.context
-           var orderId = SharedPrefHelper.getOrderId(context)
-           var userId = SharedPrefHelper.getUserId(context)
-
-               OrderViewModel().updatetotalPrice(
-                   Order(
-                   orderId,
-                   "",
-                   "",
-                   userId
-               ),userId).observeForever {
-                   Toast.makeText(context, "Ubdate", Toast.LENGTH_SHORT).show()
-                   var intent = Intent(holder.itemView.context, OrderActivity::class.java)
-                   context.startActivity(intent)
-               }
-       }
-        /*********************end of OrderUbdateButton*******************************/
-
-
-
-
         /*********************imageViewRemove*******************************/
 holder.imageViewRemove.setOnClickListener {
     var context = holder.itemView.context
@@ -85,6 +58,5 @@ class CartHolder(v: View) : RecyclerView.ViewHolder(v) {
     var oPrice = v.findViewById<TextView>(R.id.textViewCPrice)
     var imageViewRemove=v.findViewById<ImageView>(R.id.cImageViewRemove)
     var orderImageView=v.findViewById<ImageView>(R.id.cartImageView)
-    var OrderButton=v.findViewById<Button>(R.id.OrderButton)
 
 }
