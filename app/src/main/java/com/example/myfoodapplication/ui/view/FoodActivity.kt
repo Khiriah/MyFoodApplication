@@ -1,5 +1,6 @@
 package com.example.myfoodapplication.ui.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -15,6 +16,7 @@ import com.example.myfoodapplication.R
 import com.example.myfoodapplication.Util.SharedPrefHelper
 import com.example.myfoodapplication.ViewModel.FoodViewModel
 import com.example.myfoodapplication.adapter.FoodAdapter
+import com.example.myfoodapplication.ui.view.Fragment.HomeFragment
 import com.squareup.picasso.Picasso
 
 
@@ -23,11 +25,15 @@ class FoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food)
 
+
+        /****************************back***************************/
+        var imageViewFood = findViewById<ImageView>(R.id.imageViewFood)
+        imageViewFood.setOnClickListener {
+            finish()
+        }
+        /****************************back***************************/
+
         val viewModel: FoodViewModel by viewModels()
-
-
-
-
         var textViewSName = findViewById<TextView>(R.id.textViewSName)
         var textViewSRating = findViewById<TextView>(R.id.textViewSRating)
        var imageView=findViewById<ImageView>(R.id.imageViewS)

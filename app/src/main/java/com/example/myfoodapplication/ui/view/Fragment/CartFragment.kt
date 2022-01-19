@@ -20,6 +20,8 @@ import com.example.myfoodapplication.ViewModel.OrderViewModel
 import com.example.myfoodapplication.ViewModel.ProductViewModel
 import com.example.myfoodapplication.adapter.ProductAdapter
 import com.example.myfoodapplication.ui.view.OrderActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 //<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -45,16 +47,15 @@ class CartFragment : Fragment() {
         var totalPrice: Double = 0.0
         var orderTotalTextView = v.findViewById<TextView>(R.id.orderTotalTextView)
 
-//
-//            swipeContainer = v.findViewById(R.id.swipeContainer);
-//        swipeContainer.setOnRefreshListener{
-//                    // refresh your list contents somehow
-//            swipeContainer.isRefreshing = false}
-//
-//        swipeContainer.setColorSchemeColors(android.R.color.holo_green_dark,
-//            android.R.color.holo_red_dark,
-//            android.R.color.holo_blue_dark,
-//            android.R.color.holo_orange_dark);
+
+
+        /****************************CreatedAT***************************/
+        var textViewOCreatedAt=v.findViewById<TextView>(R.id.textViewOCreatedAt)
+        var calendar = Calendar.getInstance()
+        var dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
+        var date = dateFormat.format(calendar.time)
+        textViewOCreatedAt.text = date
+        /****************************end of CreatedAT***************************/
 
         val viewModel: ProductViewModel by viewModels()
         var userid = SharedPrefHelper.getUserId(context)
@@ -71,21 +72,22 @@ class CartFragment : Fragment() {
 
         })
 
-//        println(totalPrice)
+
         orderButton.setOnClickListener {
 
 
             var orderId = SharedPrefHelper.getOrderId(context)
             var userId = SharedPrefHelper.getUserId(context)
             val viewModel: OrderViewModel by viewModels()
-            viewModel.updatetotalPrice(
-                Order(
-                    orderId,
-                    "",
+            var order=Order(
+                orderId,
+                date,
 //                    orderTotalTextView.text.toString(),
-                    totalPrice.toString(),
-                    userId
-                ),userId).observeForever {
+                totalPrice.toString(),
+                userId
+            )
+            viewModel.updatetotalPrice(order,userId).observeForever {
+                SharedPrefHelper.clearOrderId(context)
                 Toast.makeText(context, "Ubdate", Toast.LENGTH_SHORT).show()
                 var intent = Intent(context, OrderActivity::class.java)
                 context.startActivity(intent)
@@ -93,10 +95,7 @@ class CartFragment : Fragment() {
         }
         return v
     }
-//
-//    override fun onRefresh() {
-//        TODO("Not yet implemented")
-//    }
+
 
 
 }

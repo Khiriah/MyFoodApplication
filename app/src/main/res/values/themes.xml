@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.MyFoodApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#F8E540</item>
-        <item name="colorPrimaryVariant">#F8E540</item>
+        <item name="colorPrimary">#FFBD35</item>
+        <item name="colorPrimaryVariant">#FFBD35</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#D1CDAC</item>
-        <item name="colorSecondaryVariant">#F8E540</item>
+        <item name="colorSecondary">#FFBD35</item>
+        <item name="colorSecondaryVariant">#FFBD35</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

@@ -14,54 +14,85 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        tools:context=".views.CartFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cartRecyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/list_raw_cart"
-            tools:itemCount="2"
-            />
+            android:orientation="vertical"
+            tools:context=".views.CartFragment"
+            app:cardCornerRadius="20dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_raw_cart" />
 
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/orderTotalTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_margin="8dp"
-            android:text="Total:  26 SR"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+                <Space
+                    android:layout_width="166dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/textViewOCreatedAt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:visibility="invisible"/>
+                <TextView
+                    android:id="@+id/orderTotalTextView4"
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="Total:"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
-        <Button
-            android:id="@+id/OrderButton"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_margin="8dp"
-            android:text="@string/place_order"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+                <TextView
+                    android:id="@+id/orderTotalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:text="260000"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/orderTotalTextView2"
+                    android:layout_width="7dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="SR"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewOCreatedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/OrderButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="164dp"
+                android:layout_height="63dp"
+                android:layout_gravity="end"
+                android:layout_margin="8dp"
+                android:text="@string/place_order"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="20sp" />
+
+        </LinearLayout>
 
     </ScrollView>
 

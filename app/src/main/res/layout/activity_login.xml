@@ -13,7 +13,8 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="90dp"
-        app:cardBackgroundColor="#00FFFFFF"
+        app:cardBackgroundColor="#ECECEC"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,21 +23,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/x"
-                android:layout_width="286dp"
-                android:layout_height="168dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.467"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/login">
-
-            </com.airbnb.lottie.LottieAnimationView>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TexteditTextLogin"
@@ -48,7 +34,7 @@
                 android:layout_marginEnd="6dp"
 
                 android:hint="@string/email"
-
+                app:startIconDrawable="@drawable/ic_baseline_email_24"
                 app:endIconContentDescription="Date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +61,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="6dp"
                 android:hint="@string/passoword"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24"
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +126,7 @@
                 android:layout_marginStart="34dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="35dp"
-                android:background="#EADC60"
+                android:background="#FFBD35"
                 android:fontFamily="sans-serif"
                 android:text="@string/login"
                 android:textAlignment="center"
@@ -161,18 +148,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
-            <TextView
-                android:id="@+id/textViewLoction"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="297dp"
-                android:text="TextView"
-                android:visibility="invisible"
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="242dp"
+                android:layout_height="233dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="61dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cozymeal" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

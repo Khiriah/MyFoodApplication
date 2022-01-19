@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyFoodApplication</string>
+    <string name="app_name">CozyMeal</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="help1">نعمل بين الساعة 8 صباحًا و 2 صباحًا على مدار العام. ومع ذلك ، فإن وقت التسليم يعتمد على الأسر المنتجة. لتمكين خدمة طلب الطعام لدينا على مدار الساعة طوال أيام الأسبوع ، يمكنك تقديم طلب للتسليم وجدولته خلال ساعات العمل لدينا.</string>
     <string name="what_are_cozymeal_working_hours">ما هي ساعات عمل كوزي ميل؟</string>
@@ -28,8 +28,14 @@
     <string name="offers_notification">إشعارات العروض</string>
     <string name="language">اللغة</string>
     <string name="setting">الإعدادات</string>
-    <string name="place_order">Place Order</string>
+    <string name="place_order">تنفيذ الطلب</string>
+    <string name="sign_out">تسجيل الخروج</string>
     <string name="my_vouchers">كوبوناتي</string>
-    <string name="help_and_support">للمساعدة</string>
+    <string name="help_and_support">المساعدة والدعم</string>
+    <string name="connect_us">تواصل معنا</string>
+    <string name="help2">لا ، نحن الوجهة الوحيدة لطلب الطعام عبر الإنترنت. بدلاً من الاتصال ، نرسل طلبك إلى الاسر المنتجة عبر الإنترنت ، ونمكنك من طلب طعامك المفضل من اسر منتجة مختلفة والتأكد من توصيل الطعام إلى عتبة داركم. نحن نبسط اختياراتك الغذائية من خلال الجمع بين الاسر المنتجة الرائدة في مدينتك.</string>
+    <string name="help3_2">حاليًا ، جميع المدفوعات الدفع نقدًا عند الاستلام. </string>
+    <string name="help1_1">هل كوزي ميل شركة توصيل؟</string>
+    <string name="help3_1">كيف تقبل المدفوعات؟ </string>
     <string name="Lang">English</string>
 </resources>

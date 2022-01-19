@@ -63,13 +63,30 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewVouchers" />
 
         <TextView
-            android:id="@+id/textViewSetting"
+            android:id="@+id/textViewConnectUs"
             android:layout_width="408dp"
             android:layout_height="55dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
+            android:drawableStart="@android:drawable/ic_btn_speak_now"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:gravity="center_vertical"
+            android:text="@string/connect_us"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHelp" />
 
+        <TextView
+            android:id="@+id/textViewSetting"
+            android:layout_width="408dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginEnd="8dp"
             android:drawableStart="@drawable/ic_baseline_settings_24"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:gravity="center_vertical"
@@ -78,14 +95,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.538"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewHelp" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewConnectUs" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="67dp"
             android:layout_height="36dp"
             android:layout_marginStart="172dp"
-            android:layout_marginTop="164dp"
+            android:layout_marginTop="116dp"
             android:layout_marginEnd="172dp"
             android:text="@string/more"
             android:textSize="24sp"
@@ -95,5 +112,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>

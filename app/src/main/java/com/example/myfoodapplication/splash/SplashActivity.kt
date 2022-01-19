@@ -25,18 +25,15 @@ class SplashActivity : AppCompatActivity() {
             var token = it.result.toString()
             println(token)
 
-
-
+            var userId = SharedPrefHelper.getUserId(this)
             Handler().postDelayed({
-                if (SharedPrefHelper.getUserId(this) == "null") {
+                if (userId == "null") {
                     var intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
-
                 } else {
                     var intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
-
                 finish()
             }, 5000)
         }

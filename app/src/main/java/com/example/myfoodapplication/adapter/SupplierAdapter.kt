@@ -34,21 +34,21 @@ class SupplierAdapter(var data: List<Supplier>) : RecyclerView.Adapter<PersonHol
 
     override fun onBindViewHolder(holder: PersonHoler, position: Int) {
         var context = holder.constraintLayoutPerson.context
-        holder.pName.text = data[position].name
-        holder.pRating.text = data[position].rating
-        holder.pType.text = data[position].food_types
-        Picasso.get().load(data[position].logo).into(holder.imageViewp)
+        holder.pName.text = dataSearch[position].name
+        holder.pRating.text = dataSearch[position].rating
+        holder.pType.text = dataSearch[position].food_types
+        Picasso.get().load(dataSearch[position].logo).into(holder.imageViewp)
 
 
         holder.itemView.setOnClickListener {
             var intent = Intent(holder.itemView.context, FoodActivity::class.java)
-            intent.putExtra("supplier", data[position])
+            intent.putExtra("supplier", dataSearch[position])
             context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return dataSearch.size
     }
 
     override fun getFilter(): Filter {

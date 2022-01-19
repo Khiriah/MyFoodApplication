@@ -1,6 +1,7 @@
 package com.example.myfoodapplication.Util
 
 import android.content.Context
+import android.content.SharedPreferences
 
 class SharedPrefHelper {
     companion object {
@@ -24,6 +25,21 @@ class SharedPrefHelper {
             var pref = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE)
             var id=  pref.getString("o_id","")
             return id!!
+        }
+        fun clearShardPreferences(context: Context) {
+
+            var Sharedpref : SharedPreferences = context.getSharedPreferences("MyPref",
+                Context.MODE_PRIVATE)
+            val editor = Sharedpref.edit()
+            editor.putString("id", "null")
+            editor.apply()
+        }
+        fun clearOrderId(context: Context) {
+            var Sharedpref : SharedPreferences = context.getSharedPreferences("MyPref",
+                Context.MODE_PRIVATE)
+            val editor = Sharedpref.edit()
+            editor.putString("o_id", "null")
+            editor.apply()
         }
     }
 }

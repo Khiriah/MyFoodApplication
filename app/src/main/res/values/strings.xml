@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyFoodApplication</string>
+    <string name="app_name">CozyMeal</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="help1">We work between 8am and 2am throughout the year. However, the delivery time depends on the business service. To enable our 24/7 food ordering service, you can place and schedule an order for delivery during our business hours.</string>
@@ -32,5 +32,11 @@
     <string name="help_and_support">Help and Support</string>
     <string name="setting">Setting</string>
     <string name="more">More</string>
+    <string name="connect_us">Connect Us</string>
     <string name="Lang">عربي</string>
+    <string name="help2">No, we are the only destination for ordering food online. Instead of calling, we pass your order to the producing families online, we enable you to order your favorite food from different producing families and make sure that the food is delivered to your doorstep. We simplify your food selection by bringing together the leading producing families in your city.</string>
+    <string name="help3_2">Currently all payments are Cash On Delivery .</string>
+    <string name="help1_1">Is CozyMeal a delivery company?</string>
+    <string name="help3_1">How do you accept payments ?</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

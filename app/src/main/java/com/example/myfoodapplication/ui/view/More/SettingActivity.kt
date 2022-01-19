@@ -1,5 +1,6 @@
 package com.example.myfoodapplication.ui.view.More
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
@@ -7,14 +8,25 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Spinner
 import com.example.myfoodapplication.R
+import com.example.myfoodapplication.ui.view.FoodActivity
+import com.example.myfoodapplication.ui.view.Fragment.MoreFragment
 import java.util.*
 
 class SettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
+
+
+        /****************************back***************************/
+        var imageViewSitting = findViewById<ImageView>(R.id.imageViewSitting)
+        imageViewSitting.setOnClickListener {
+            finish()
+        }
+        /****************************back***************************/
 //        var arrayCountry= resources.getStringArray(R.array.array_country)
         var spinner = findViewById<Spinner>(R.id.spinnerLanguage)
         var item: Any = ""

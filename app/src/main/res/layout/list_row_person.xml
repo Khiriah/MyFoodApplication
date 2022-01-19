@@ -9,8 +9,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/carview"
-        android:layout_width="400dp"
-        android:layout_height="350dp"
+        android:layout_width="385dp"
+        android:layout_height="310dp"
         android:layout_margin="10dp"
         android:layout_marginTop="4dp"
         android:alpha="0.9"
@@ -60,26 +60,26 @@
                 android:id="@+id/textViewPType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:text="Type"
                 android:textColor="#3E3D3D"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.095"
+                app:layout_constraintHorizontal_bias="0.046"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPName" />
 
             <TextView
                 android:id="@+id/textViewPRating"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="41dp"
                 android:text="4.5"
                 android:textColor="#3E3D3D"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toStartOf="@+id/ratingBar"
-                app:layout_constraintHorizontal_bias="0.937"
+                app:layout_constraintHorizontal_bias="0.938"
                 app:layout_constraintStart_toEndOf="@+id/textViewPName"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewPerson" />
 
@@ -88,8 +88,10 @@
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:layout_width="38dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewPerson" />
 

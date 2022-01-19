@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.R
@@ -46,6 +47,6 @@ class FoodHoler(v: View) : RecyclerView.ViewHolder(v) {
     var fPrice = v.findViewById<TextView>(R.id.textViewFPrice)
      var imageView=v.findViewById<ImageView>(R.id.imageViewFood2)
  var OrderButton=v.findViewById<Button>(R.id.OrderButton)
-    var LayoutFood = v.findViewById<LinearLayout>(R.id.LayoutFood)
+    var LayoutFood = v.findViewById<CardView>(R.id.LayoutFood)
 
 }

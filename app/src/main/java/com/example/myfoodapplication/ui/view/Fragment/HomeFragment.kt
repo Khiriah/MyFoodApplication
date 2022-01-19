@@ -1,6 +1,5 @@
 package com.example.myfoodapplication.ui.view.Fragment
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,19 +10,14 @@ import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myfoodapplication.Model.Food
 import com.example.myfoodapplication.R
 import com.example.myfoodapplication.ViewModel.SupplierViewModel
 import com.example.myfoodapplication.adapter.SupplierAdapter
-import android.content.Intent.getIntent
-
-
-
 
 
 class HomeFragment : Fragment() {
 
-    lateinit var textViewLoction: TextView
+
     lateinit var adapter: SupplierAdapter
 
     override fun onCreateView(
@@ -32,20 +26,24 @@ class HomeFragment : Fragment() {
     ): View? {
 
 
-        var context=inflater.context
+        var context = inflater.context
         var v = inflater.inflate(R.layout.fragment_home, container, false)
         var pRecyclerView = v.findViewById<RecyclerView>(R.id.recyclerViewP)
-      var pSearchView = v.findViewById<SearchView>(R.id.searchViewP)
-       textViewLoction = v.findViewById(R.id.textViewLoction)
-        val get = getIntent().getStringExtra("i")
-//        val get= getActivity()!!.getIntent().getExtras()!!.getString("i")
-        textViewLoction.text=(get)
+        var pSearchView = v.findViewById<SearchView>(R.id.searchViewP)
 
+
+
+
+
+//        val locationName = activity!!.intent.getStringExtra("i")
+//        textViewLoction.text=locationName
+//        println(locationName)
         val viewModel: SupplierViewModel by viewModels()
 
         pRecyclerView.layoutManager = LinearLayoutManager(context)
         viewModel.getallSuppliers().observe(this, { list ->
 //            var supID = list[0].id
+            adapter=SupplierAdapter(list)
             pRecyclerView.adapter = SupplierAdapter(list)
 
         })
@@ -61,8 +59,6 @@ class HomeFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 adapter.filter.filter(newText)
-
-
                 pRecyclerView.adapter = adapter
                 return false
             }
@@ -139,7 +135,7 @@ class HomeFragment : Fragment() {
 //        }
 
 
-    }
+}
 
 
 
